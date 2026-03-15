@@ -10,6 +10,16 @@ Markdown 出现的初衷，并不是为了把写作变得更复杂，而是为�
 
 也正因为如此，Markdown 特别适合知识笔记、技术文档、课程讲义、项目说明、博客草稿、论文草稿和长期积累型写作。当你的材料越来越多时，你会逐渐发现一个事实：真正难管理的并不是“怎么把某一页排得很好看”，而是“怎么让几十篇、几百篇文档都保持清晰、稳定、可迁移”。Markdown 在这件事上非常强，因为它的底层是普通文本文件。普通文本意味着可搜索、可版本管理、可迁移、可长期保存，也意味着你不会被某个单一软件的私有格式牢牢绑住。
 
+## 一点五、为什么同一份 Markdown 在不同地方会显示得不一样
+
+很多新手在刚开始学 Markdown 时，会遇到一个看起来很奇怪、其实非常正常的现象：同样一份 `.md` 文件，在 Typora 里看着很好，放到 GitHub 上时某些细节却不完全一样；换一个静态站点生成器后，目录、换行、表格、脚注、任务列表的表现又可能发生变化。于是就会得出一个误解，好像 Markdown 本身“不稳定”。
+
+严格地说，不稳定的并不是 Markdown 这个想法本身，而是历史上 Markdown 的定义过于简短、过于强调直觉，导致很多边界情况没有被完全说死。CommonMark 规范之所以出现，正是因为原始 Markdown 说明虽然提出了清晰的设计哲学，却没有把许多解析细节完全写成机器可验证的规则。比如，子列表到底需要多少缩进，标题前是否必须空行，列表中的空行会不会改变结构，行末换行到底怎样才算硬换行，这些在不同实现里都曾出现过差异。
+
+这件事对初学者非常重要，因为它直接决定了学习姿势。你不应该把 Markdown 当成一套“背下来以后永远百分之百一致”的绝对语法，而应该把它理解为一个有共同核心、但在不同生态中会有扩展和实现差异的文本写作体系。Typora 倾向于支持接近 GitHub Flavored Markdown 的常见扩展；GitHub 自己又有一套面向仓库协作场景的渲染规则；而 CommonMark 更像是在为这些行为提供一个更严格的共同地基。
+
+因此，真正稳妥的学习方式并不是追求“记住所有平台的所有细节”，而是先掌握最稳的基础写法，再逐渐理解平台差异。比如，标题前后留空行、井号后面加空格、列表缩进写得清楚、图片尽量用相对路径、不要混用太多花哨写法，这些都属于在多个平台之间更不容易出问题的保守写法。你后面会发现，这种写法习惯不仅让文档更稳定，也让源文本本身更整洁。
+
 ## 二、Typora 为什么适合初学者
 
 理解了 Markdown 的价值之后，第二个问题就来了：既然 Markdown 本质上是文本，那我是不是随便用个文本编辑器就行？理论上确实可以。你甚至可以用记事本、VS Code、Vim 或任何能保存纯文本的编辑器去写 Markdown。但是，理论上的“可以”，并不等于实践中的“适合起步”。
@@ -382,8 +392,14 @@ echo "这是代码块"
 本章写作参考了以下原始资料与官方资料，并在内容组织时进行了中文教学化重写。
 
 1. John Gruber, *Markdown Syntax Documentation*：<https://daringfireball.net/projects/markdown/syntax>
-2. Markdown Guide, *Basic Syntax*：<https://www.markdownguide.org/basic-syntax/>
-3. Typora Support, *Markdown Reference*：<https://support.typora.io/Markdown-Reference/>
-4. Typora Support, *Images in Typora*：<https://support.typora.io/Images/>
-5. Typora Support, *Math and Academic Functions*：<https://support.typora.io/Math/>
-6. Typora Support, *Auto Numbering for Headings*：<https://support.typora.io/Auto-Numbering/>
+2. CommonMark, *CommonMark Spec 0.31.2*：<https://spec.commonmark.org/0.31.2/>
+3. CommonMark, *Markdown Tutorial*：<https://commonmark.org/help/tutorial/>
+4. Markdown Guide, *Basic Syntax*：<https://www.markdownguide.org/basic-syntax/>
+5. GitHub Docs, *Basic writing and formatting syntax*：<https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax>
+6. Typora Support, *Markdown Reference*：<https://support.typora.io/Markdown-Reference/>
+7. Typora Support, *Images in Typora*：<https://support.typora.io/Images/>
+8. Typora Support, *Shortcut Keys*：<https://support.typora.io/Shortcut-Keys/>
+9. Typora Support, *YAML Front Matter*：<https://support.typora.io/YAML/>
+10. Typora Support, *Export*：<https://support.typora.io/Export/>
+11. Typora Support, *Math and Academic Functions*：<https://support.typora.io/Math/>
+12. Typora Support, *Auto Numbering for Headings*：<https://support.typora.io/Auto-Numbering/>
