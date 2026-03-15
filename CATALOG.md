@@ -14,6 +14,7 @@
 
 - [分册说明](books/typora-and-markdown/README.md)
 - [第一章：像写作一样使用 Typora 与 Markdown](books/typora-and-markdown/chapters/01-typora-and-markdown.md)
+- [第二章：把文档写成可以长期维护的样子——目录、图片、相对路径与仓库组织](books/typora-and-markdown/chapters/02-structure-images-and-paths.md)
 - [资料地图](books/typora-and-markdown/research/source-map.md)
 
 ## B. 规划中分册

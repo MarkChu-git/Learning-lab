@@ -28,6 +28,10 @@
 
 - [第一章：像写作一样使用 Typora 与 Markdown](chapters/01-typora-and-markdown.md)
 
+### 第二章
+
+- [第二章：把文档写成可以长期维护的样子——目录、图片、相对路径与仓库组织](chapters/02-structure-images-and-paths.md)
+
 ## 研究资料
 
 为了避免把这一册写成经验口述，当前已经整理了一份资料地图，用来说明正文背后的主要依据。
