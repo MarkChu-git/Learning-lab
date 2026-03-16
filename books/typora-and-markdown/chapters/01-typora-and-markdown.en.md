@@ -1,84 +1,207 @@
-# Chapter 1: Using Typora and Markdown as a Writing Method
+# Chapter 1: Use Typora and Markdown as a Real Writing Method
 
-> Language / 语言：[中文原文](01-typora-and-markdown.md) | **English entry**
+> Language / 语言：[中文](01-typora-and-markdown.md) | **English**
 
-## Status
+This chapter is the foundation of the whole volume.
 
-This English chapter is currently an **entry version**, not yet a full line-by-line translation of the Chinese chapter.
+It is not a syntax dump. It answers a more important question:
 
-That means:
+> Why should a beginner use Markdown + Typora as a long-term writing workflow?
 
-- the Chinese chapter remains the full main text for now;
-- this English page provides the chapter purpose, structure, and reading guidance;
-- the full English body can be expanded progressively in later passes.
+If your current writing process feels like this — scattered notes, weak structure, difficult revision, and repeated format fights — this chapter is for you.
 
-## What this chapter is about
+---
 
-Chapter 1 is designed to answer a foundational question:
+## 1. The core shift: from “formatting” to “structured writing”
 
-> Why should someone use Typora and Markdown as a serious writing workflow instead of treating Markdown as just another syntax trick?
+Most writing tools train people to think visually first:
 
-The chapter does not begin with a dry syntax table. Instead, it starts from writing itself:
+- “make this title bigger,”
+- “change this paragraph style,”
+- “align this block,”
+- “tune fonts and colors.”
 
-- what problem Markdown was created to solve,
-- why “content first” matters,
-- why Typora is a strong beginner entry point,
-- and why structure matters more than decorative features in the early stage.
+Markdown pushes a different model:
 
-## Core themes covered in the Chinese chapter
+- define structure first,
+- keep content readable as plain text,
+- let rendering come later.
 
-The original Chinese chapter currently develops the following themes in detail:
+This shift is exactly why Markdown is strong for long-term writing, especially when documents keep evolving.
 
-1. **Markdown is a writing tool, not a stunt language**
-   - It helps bring attention back to content and structure.
-   - It is especially suitable for long-term document maintenance.
+---
 
-2. **The same Markdown file may render differently across platforms**
-   - Markdown has a common core, but implementations differ.
-   - CommonMark and GitHub Flavored Markdown matter for stable writing habits.
+## 2. What Markdown really gives you
 
-3. **Why Typora is beginner-friendly**
-   - It combines source text and readable presentation in a smooth way.
-   - It helps users learn Markdown rather than hide it completely.
+Markdown is not “lightweight Word.” It gives you four durable benefits:
 
-4. **What expectations to have before installation**
-   - Typora is a writing-centered tool, not a full visual layout system.
-   - It should be evaluated as a serious long-term writing tool.
+1. **Portability**: files are plain text and survive tools better.
+2. **Maintainability**: structure stays explicit over time.
+3. **Version-friendliness**: Git diffs remain readable.
+4. **Composability**: content can be reorganized, split, merged, exported.
 
-5. **How to understand the interface**
-   - editing area
-   - file tree
-   - outline panel
-   - menus and preferences
+For textbooks, tutorials, notes, and docs, these benefits compound quickly.
 
-6. **Why structure matters more than flashy syntax**
-   - headings, paragraphs, lists, blockquotes, and code blocks form the real skeleton of a document.
+---
 
-7. **Common beginner misunderstandings**
-   - treating Markdown like a lighter Word clone,
-   - treating Typora like a purely visual editor,
-   - chasing advanced features too early,
-   - ignoring the file system.
+## 3. Why Typora is a strong beginner entry point
 
-8. **How to start writing the first real Markdown article**
-   - begin with a small topic,
-   - build a clean heading structure,
-   - write complete paragraphs before decorating the page.
+Typora solves a practical beginner problem:
 
-## Recommended way to read this chapter
+> many editors either expose too much raw markup or hide too much structure.
 
-If you are reading in English for now, the best strategy is:
+Typora stays in the middle:
 
-- start with this overview to understand the chapter’s logic;
-- read the Chinese original if you need the full detailed body;
-- use this page as the anchor for the future English expansion.
+- you still write Markdown source,
+- but the reading experience stays smooth,
+- so beginners can learn syntax without feeling punished.
 
-## Next step for the English version
+This is why Typora works well as a “transition tool” from visual editing habits to structured writing habits.
 
-The next expansion pass for this chapter should translate and refine the full body section by section, especially:
+---
 
-- the opening argument about Markdown as a writing method,
-- the sections on Typora’s role in learning,
-- the discussion of structure-first writing,
-- the beginner error patterns,
-- and the first practical writing exercise.
+## 4. What this chapter wants you to stop doing
+
+Common beginner traps:
+
+1. treating Markdown as a trick language instead of a writing method,
+2. chasing fancy syntax before mastering document skeleton,
+3. relying on random copy-pasted templates without understanding structure,
+4. ignoring folders, paths, and file naming,
+5. assuming that “it renders here” means “it renders everywhere.”
+
+If you fix these five habits early, your writing quality becomes much more stable.
+
+---
+
+## 5. The minimum structure you should write with
+
+Before advanced features, the first stable skeleton is:
+
+- headings,
+- paragraphs,
+- lists,
+- blockquotes,
+- code blocks,
+- links,
+- images,
+- tables.
+
+That skeleton carries most practical documentation work.
+
+---
+
+## 6. Platform differences: what beginners must know early
+
+A Markdown file is not always rendered the same way everywhere.
+
+You need at least basic awareness of:
+
+- Markdown core syntax,
+- CommonMark baseline behavior,
+- GitHub Flavored Markdown (GFM) extensions,
+- Typora rendering behavior.
+
+This chapter’s practical rule is simple:
+
+> write with portability in mind, especially if your files are eventually viewed on GitHub.
+
+---
+
+## 7. Installation mindset: what to expect from Typora
+
+Do not install Typora expecting a full desktop publishing system.
+
+Expect this instead:
+
+- a writing-first Markdown editor,
+- optimized for sustained drafting and revision,
+- with practical support for structure, files, and export.
+
+When expectations are correct, frustration drops dramatically.
+
+---
+
+## 8. Interface understanding that matters
+
+The most useful areas in Typora for beginners are:
+
+- the main editing pane,
+- the file tree,
+- the outline panel,
+- settings related to Markdown behavior and images.
+
+If you treat these as workflow tools rather than “UI decoration,” your learning speed improves.
+
+---
+
+## 9. A practical first-writing routine
+
+Use this routine for your first serious Markdown article:
+
+1. define one clear title,
+2. draft a simple heading hierarchy,
+3. write complete paragraphs before decoration,
+4. add one code block or one table only when needed,
+5. keep image paths organized from day one,
+6. commit the draft if you are using Git.
+
+This gives you a stable baseline quickly.
+
+---
+
+## 10. A “good first chapter” checklist
+
+Before calling your first chapter done, verify:
+
+- [ ] heading levels are consistent,
+- [ ] each section has one clear purpose,
+- [ ] list and paragraph boundaries are readable,
+- [ ] code blocks are marked with language where useful,
+- [ ] images use relative paths,
+- [ ] there is a short summary at the end.
+
+---
+
+## 11. Why this chapter is intentionally conservative
+
+You may notice this chapter does not rush into advanced tricks.
+
+That is deliberate.
+
+Beginners who start with too many features usually get:
+
+- unstable style,
+- weak structure,
+- fragile files,
+- and low confidence.
+
+Beginners who start with durable basics get:
+
+- faster writing speed,
+- cleaner revision cycles,
+- easier collaboration,
+- and long-term maintainability.
+
+---
+
+## 12. Chapter summary
+
+The most important result of Chapter 1 is not command memorization.
+
+It is a mental model:
+
+- write structure first,
+- keep content portable,
+- use Typora as a practical bridge,
+- and build habits that still work when your document grows.
+
+Once this model is stable, later chapters on folder structure, image paths, LaTeX, and Git workflow become much easier.
+
+---
+
+## Next step
+
+Continue to Chapter 2:
+
+- [Chapter 2: Writing Documents That Can Survive Long-Term Maintenance](02-structure-images-and-paths.en.md)

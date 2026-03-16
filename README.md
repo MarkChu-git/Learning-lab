@@ -2,101 +2,61 @@
 
 > 语言 / Language：**中文** | [English](README.en.md)
 
-这是一个持续建设中的中文教材合集仓库。
+这是一个持续建设中的教材仓库，目标是把不同主题写成真正可读、可学、可复习的长期教材，而不是临时教程集合。
 
-它不是围绕某一个单独主题临时搭起来的教程目录，而是一个可以长期扩展的教材总仓。这个仓库的目标，是把一门门值得系统学习的主题，逐步整理成适合中文读者、适合长期阅读、适合自学推进的教材。每一册都尽量避免只做速查表或零碎笔记，而是尽量写成可以从头读下去、形成知识结构、真的拿来学习和复习的正文材料。
+## 这次更新的重点
 
-## 这套教材在做什么
+为了解决“新手上手慢、英文内容过于简略”两个问题，本次已做两类扩充：
 
-可以把这个仓库理解为一个长期扩展的教材体系。它希望做到的，不是“多放一些教程”，而是逐步把不同主题写成真正可读、可学、可复习的教材正文。
+1. **新增新手快学实战线（Chapter 0）**
+   - Typora / Markdown 分册新增快学章
+   - Git / GitHub 分册新增快学章
+   - 强化实用内容：Git 高频命令、Markdown 常用语法、LaTeX 基础表达、日常工作流
 
-更具体地说，这套教材希望具备下面几个特点：
+2. **英文内容不再是简略入口页**
+   - 关键章节改为完整英文正文
+   - 目标改为中英内容尽量等量，只语言不同
 
-- **成体系**：优先写连起来读的结构化内容，而不是堆砌技巧碎片。
-- **重依据**：优先使用可靠资料源，尤其是原始文档、官方文档、规范文档和长期稳定的参考资料。
-- **重解释**：不仅回答“怎么做”，也回答“为什么这么做”“和别的做法有什么差异”“新手最容易在哪里踩坑”。
-- **重长期使用**：每一册都要适合后续扩写、复习和反复查阅，而不是只服务一次性阅读。
+## 当前已启动分册
 
-## 当前已启动的教材
-
-### 1. Typora 与 Markdown
-
-这是当前正在持续扩写的第一册，主题聚焦在以下几个方面：
-
-- Markdown 为什么适合长期写作与知识管理
-- Typora 为什么适合作为入门与长期写作工具
-- Markdown、CommonMark、GitHub Flavored Markdown、Typora 支持集之间的关系
-- 图片、目录、相对路径、导出、YAML、GitHub 展示差异等真实工作流问题
+### 1) Typora 与 Markdown
 
 入口：
 
-- [《Typora 与 Markdown》总说明](books/typora-and-markdown/README.md)
-- [第一章：像写作一样使用 Typora 与 Markdown](books/typora-and-markdown/chapters/01-typora-and-markdown.md) ([English](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md))
+- [分册说明](books/typora-and-markdown/README.md)
+- [第零章：新手快学版](books/typora-and-markdown/chapters/00-practical-quickstart.md) ([English](books/typora-and-markdown/chapters/00-practical-quickstart.en.md))
+- [第一章](books/typora-and-markdown/chapters/01-typora-and-markdown.md) ([English](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md))
+- [第二章](books/typora-and-markdown/chapters/02-structure-images-and-paths.md) ([English](books/typora-and-markdown/chapters/02-structure-images-and-paths.en.md))
+- [第三章](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.md) ([English](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.en.md))
 
-### 2. Git 与 GitHub
-
-这是现在已经正式启动的第二册。
-
-很多人觉得 Git "很重要但很难学"，往往是因为一开始学的不是"版本控制在解决什么问题"，而只是"几条命令怎么敲"。这一册的目标，是解决这些问题：版本控制为什么存在？Git 和普通备份有什么本质差异？如何形成稳定的协作与发布工作流？
-
-主题聚焦在以下几个方面：
-
-- 版本控制到底在解决什么问题
-- Git 和普通文件备份、网盘同步之间的本质差异
-- Git 和 GitHub 分别负责什么，为什么不能混为一谈
-- 提交、分支、远程仓库、协作与发布流程的基本逻辑
+### 2) Git 与 GitHub
 
 入口：
 
-- [《Git 与 GitHub》总说明](books/git-and-github/README.md)
-- [第一章：先理解版本控制到底在解决什么问题](books/git-and-github/chapters/01-why-version-control-matters.md) ([English](books/git-and-github/chapters/01-why-version-control-matters.en.md))
+- [分册说明](books/git-and-github/README.md)
+- [第零章：新手快学版](books/git-and-github/chapters/00-practical-quickstart.md) ([English](books/git-and-github/chapters/00-practical-quickstart.en.md))
+- [第一章](books/git-and-github/chapters/01-why-version-control-matters.md) ([English](books/git-and-github/chapters/01-why-version-control-matters.en.md))
 
-## 仓库结构
+## 推荐阅读路径
 
-当前教材合集采用按“分册”组织的方式。每一册教材都有自己的说明文件、章节目录和研究资料目录。这样做的好处有两点：
+### A. 完全新手（想快速上手）
 
-- 后续增加新教材时不会互相打架。
-- 每一册都能独立维护、独立扩写、独立沉淀研究资料。
+1. 先读两个分册的第零章快学版
+2. 再读 Typora 分册第 1~3 章
+3. 再读 Git 分册第 1 章并进入后续章节
 
-```text
-textbook-collection/
-├── README.md
-├── CATALOG.md
-└── books/
-    └── typora-and-markdown/
-        ├── README.md
-        ├── chapters/
-        └── research/
-```
+### B. 已会一点但不稳
 
-随着内容增加，后续还会加入更多分册，例如写作工具、知识管理、研究方法、编程基础、工程工作流、算法学习等主题。但前提始终不变：**先把每一册真正写扎实，而不是为了看起来热闹而空挂目录。**
+1. 先读 Typora 第二章（目录/图片/路径）
+2. 再读 Typora 第三章（Markdown/LaTeX/设置）
+3. 再读 Git 第零章和第一章，把版本控制闭环补稳
 
 ## 目录导航
-
-总目录见：
 
 - [CATALOG.md](CATALOG.md)
 
 ## 写作方法
 
-这套教材合集默认采用“研究先行”的方法推进。也就是说，先系统查资料、比对规范、验证工具行为，再组织成适合读者吸收的教材文字。
-
-尤其是下面这些问题，不能只凭经验写：
-
-- 工具差异
-- 平台差异
-- 语法兼容性
-- 导出行为
-- 工作流设计
-
-这些内容都需要在官方文档、规范说明和真实行为之间反复核对。
-
-因此，这个仓库中的每一册教材，在条件允许时都会尽量留下研究资料地图或资料来源索引，用来说明正文背后的依据来自哪里。
-
-## 当前状态
-
-这个仓库处于持续建设中。当前最优先的工作重点是：
-
-- 先把第一册《Typora 与 Markdown》继续写厚、写稳、写成真正能学的教材。
-- 等第一册的结构、节奏和质量标准成熟之后，再把同样的方法复制到其他主题上。
-- 不同时铺很多分册，不为了显得热闹而提前空挂大量目录。
+- 研究先行：优先官方文档、规范和原始资料
+- 结构优先：先建立可维护结构，再扩写内容
+- 可复习：每章必须支持长期回查和迭代

@@ -2,7 +2,7 @@
 
 > Language / 语言：[中文](CATALOG.md) | **English**
 
-This catalog records the volumes that are already active, currently under construction, or planned for future expansion.
+This catalog tracks active and planned textbook volumes.
 
 ## A. Active volumes
 
@@ -10,67 +10,67 @@ This catalog records the volumes that are already active, currently under constr
 
 **Positioning**: an introductory textbook on writing tools and document workflow.
 
-This volume is not just about memorizing Markdown symbols. It answers: Why use Markdown? What problem does Typora solve? How do you build a stable writing workflow?
+Core scope:
 
-Its core scope includes:
-
-- the design idea behind Markdown
-- common syntax and writing structure
-- differences between CommonMark and GitHub Flavored Markdown
-- Typora's interface, settings, and everyday writing experience
-- image and path management
-- export behavior, YAML, and GitHub rendering differences
-- long-term document maintenance practices
+- structured writing with Markdown,
+- Typora writing workflow and settings,
+- images, outline, relative paths, repository organization,
+- Markdown/CommonMark/GFM differences,
+- practical LaTeX basics for technical documents.
 
 Current entry points:
 
 - [Volume introduction](books/typora-and-markdown/README.en.md)
-- [Chapter 1: Writing with Typora and Markdown](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md) ([中文](books/typora-and-markdown/chapters/01-typora-and-markdown.md))
-- [Chapter 2: Structure, Images, and Paths](books/typora-and-markdown/chapters/02-structure-images-and-paths.en.md) ([中文](books/typora-and-markdown/chapters/02-structure-images-and-paths.md))
-- [Chapter 3: Markdown, LaTeX, and Typora Settings](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.en.md) ([中文](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.md))
+- [Chapter 0: Practical Quick Start — Get Typora, Markdown, and LaTeX Working Fast](books/typora-and-markdown/chapters/00-practical-quickstart.en.md) ([中文](books/typora-and-markdown/chapters/00-practical-quickstart.md))
+- [Chapter 1: Use Typora and Markdown as a Real Writing Method](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md) ([中文](books/typora-and-markdown/chapters/01-typora-and-markdown.md))
+- [Chapter 2: Build Documents That Survive Long-Term Maintenance](books/typora-and-markdown/chapters/02-structure-images-and-paths.en.md) ([中文](books/typora-and-markdown/chapters/02-structure-images-and-paths.md))
+- [Chapter 3: Markdown Basics, LaTeX Formula Syntax, and Typora Settings](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.en.md) ([中文](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.md))
 - [Research source map](books/typora-and-markdown/research/source-map.md)
 
 ### A2. Git and GitHub
 
-**Positioning**: a textbook on version control and publishing collaboration.
+**Positioning**: a textbook on version control and collaboration workflow.
 
-This volume is not just about commands. It answers: Why does version control exist? How is Git fundamentally different from ordinary backups? How do you build a stable GitHub-based collaboration and publishing workflow?
+Core scope:
 
-Its core scope includes:
-
-- the basic idea of version control,
-- Git's working tree, staging area, commit history, and branching logic,
-- the relationship and division of labor between Git and GitHub,
-- remotes, synchronization, collaboration, review, and publishing,
-- and version-control workflows for long-term writing, project maintenance, and teamwork.
+- version-control mental model,
+- practical daily Git command loop,
+- working tree / staging / commit history,
+- branching, synchronization, collaboration, and publishing,
+- clear role split between Git and GitHub.
 
 Current entry points:
 
 - [Volume introduction](books/git-and-github/README.en.md)
-- [Chapter 1: Why Version Control Matters](books/git-and-github/chapters/01-why-version-control-matters.en.md) ([中文](books/git-and-github/chapters/01-why-version-control-matters.md))
+- [Chapter 0: Practical Quick Start — Get Git and GitHub Working Fast](books/git-and-github/chapters/00-practical-quickstart.en.md) ([中文](books/git-and-github/chapters/00-practical-quickstart.md))
+- [Chapter 1: What Version Control Is Actually Solving](books/git-and-github/chapters/01-why-version-control-matters.en.md) ([中文](books/git-and-github/chapters/01-why-version-control-matters.md))
 - [Research source map](books/git-and-github/research/source-map.md)
 
 ## B. Planned volumes
 
-The following directions are appropriate candidates for future expansion, but they are not meant to start all at once. New volumes should be added only after the current one has a stable structure and method.
+These directions are suitable for expansion later, but should not all start in parallel:
 
 ### B1. Knowledge Management and Document Structure Design
 
-**Positioning**: a textbook on personal knowledge bases, directory systems, naming, and long-term maintenance.
+**Positioning**: personal knowledge base structure, naming, and long-term maintainability.
 
 ### B2. Algorithms and Data Structures
 
-**Positioning**: a systematic textbook, not a collection of coding problem answers.
+**Positioning**: systematic learning material, not a problem-answer list.
 
 ### B3. AI Tool Workflows
 
-**Positioning**: a practice-oriented textbook around Claude, Codex, OpenCode, MCP, and automation.
+**Positioning**: practical workflows around Claude, Codex, OpenCode, MCP, and automation.
 
-## C. Editorial principles
+## C. Current i18n policy
 
-Each volume in this collection should, in principle, satisfy the following requirements:
+- English pages should no longer remain thin “entry-only” stubs.
+- Chinese and English should carry equivalent substantive content as much as possible.
+- Both fast-track chapters and full chapters should be maintained in both languages.
 
-- **Stand on its own**: even if a reader opens only one volume, they should still understand its learning goals, target audience, chapter arrangement, and reading path.
-- **Support long-term expansion**: the structure should not be designed for a single article only; it should naturally scale into chapters, sections, subsections, and appendices.
-- **Remain traceable**: important judgments, tool behavior, and specification differences should be traceable back to official documentation, standards, or original sources.
-- **Be genuinely teachable**: it should not read like marketing copy, casual blog writing, or button-click instructions. It should help readers build clearer knowledge, more stable judgment, and stronger hands-on ability.
+## D. Editorial principles
+
+- **standalone readability**: each volume should make sense on its own,
+- **long-term expandability**: structure should scale,
+- **traceable grounding**: key claims should map to source material,
+- **real teachability**: content should be understandable, practical, and reviewable.

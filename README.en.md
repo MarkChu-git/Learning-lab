@@ -2,103 +2,62 @@
 
 > Language / 语言：[中文](README.md) | **English**
 
-This repository is a growing textbook collection written for long-term learning.
+This repository is a long-term textbook project, not a temporary tutorial dump.
 
-It is not a temporary folder of scattered tutorials. The goal is to gradually turn worthwhile subjects into textbook-style materials that are readable, structured, and suitable for self-study over time. Each volume is meant to be more than a cheat sheet or a pile of notes. It should become something a learner can read from beginning to end, revisit later, and actually learn from.
+Its goal is to build durable, readable, and reviewable learning material volume by volume.
 
-## What this project is trying to do
+## What was expanded in this update
 
-You can think of this repository as a long-term textbook system. It is not trying to “host more tutorials.” It is trying to build real teaching materials volume by volume.
+To fix two issues — slow beginner onboarding and overly thin English pages — this update delivers two major changes:
 
-More specifically, the project aims to keep the following qualities:
+1. **New practical fast-track chapters (Chapter 0)**
+   - Added to both Typora/Markdown and Git/GitHub volumes
+   - Focuses on practical high-frequency content: Git commands, Markdown essentials, LaTeX basics, and daily workflow
 
-- **Systematic**: prioritize coherent, structured learning materials instead of fragmented tips.
-- **Evidence-based**: rely on stable sources, especially original documents, official references, specifications, and long-lived materials.
-- **Explanatory**: answer not only “how,” but also “why,” “how this differs from alternatives,” and “where beginners usually get stuck.”
-- **Built for long-term use**: each volume should support expansion, revision, and repeated reading.
+2. **English pages are no longer “entry-only stubs”**
+   - Core chapters are now expanded into full English body text
+   - Direction: Chinese and English should carry equivalent substance as much as possible, differing mainly by language
 
-## Current active volume
+## Active volumes
 
-### 1. Typora and Markdown
-
-This is the first volume currently under active expansion. Its focus includes:
-
-- Why Markdown is suitable for long-term writing and knowledge management
-- Why Typora is a strong entry tool for both beginners and long-term writing
-- The relationship among Markdown, CommonMark, GitHub Flavored Markdown, and Typora’s supported feature set
-- Real workflow issues such as images, tables of contents, relative paths, export behavior, YAML, and GitHub rendering differences
+### 1) Typora and Markdown
 
 Entry points:
 
-- [Volume introduction: Typora and Markdown](books/typora-and-markdown/README.en.md)
-- [Chapter 1: Writing with Typora and Markdown](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md) ([中文](books/typora-and-markdown/chapters/01-typora-and-markdown.md))
+- [Volume introduction](books/typora-and-markdown/README.en.md)
+- [Chapter 0: Practical Quick Start](books/typora-and-markdown/chapters/00-practical-quickstart.en.md) ([中文](books/typora-and-markdown/chapters/00-practical-quickstart.md))
+- [Chapter 1](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md) ([中文](books/typora-and-markdown/chapters/01-typora-and-markdown.md))
+- [Chapter 2](books/typora-and-markdown/chapters/02-structure-images-and-paths.en.md) ([中文](books/typora-and-markdown/chapters/02-structure-images-and-paths.md))
+- [Chapter 3](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.en.md) ([中文](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.md))
 
-### 2. Git and GitHub
-
-This is now the second officially started volume. Its focus includes:
-
-- what problem version control is actually solving,
-- how Git differs from ordinary backup or cloud sync habits,
-- what Git is responsible for versus what GitHub is responsible for,
-- and the basic logic of commits, branches, remotes, collaboration, and publishing.
+### 2) Git and GitHub
 
 Entry points:
 
-- [Volume introduction: Git and GitHub](books/git-and-github/README.en.md)
-- [Chapter 1: Why Version Control Matters](books/git-and-github/chapters/01-why-version-control-matters.en.md) ([中文](books/git-and-github/chapters/01-why-version-control-matters.md))
+- [Volume introduction](books/git-and-github/README.en.md)
+- [Chapter 0: Practical Quick Start](books/git-and-github/chapters/00-practical-quickstart.en.md) ([中文](books/git-and-github/chapters/00-practical-quickstart.md))
+- [Chapter 1](books/git-and-github/chapters/01-why-version-control-matters.en.md) ([中文](books/git-and-github/chapters/01-why-version-control-matters.md))
 
-## Repository structure
+## Recommended reading paths
 
-The collection is currently organized by volume. Each volume has its own introduction, chapter directory, and research directory.
+### A. Complete beginners (wants fast traction)
 
-This has two practical benefits:
+1. Start with both Chapter 0 fast-track chapters
+2. Continue with Typora chapters 1–3
+3. Move to Git chapter 1 and then later Git chapters
 
-- New volumes can be added later without creating structural chaos.
-- Each volume can be maintained, expanded, and researched independently.
+### B. Already started but still unstable
 
-```text
-textbook-collection/
-├── README.md
-├── README.en.md
-├── CATALOG.md
-├── CATALOG.en.md
-└── books/
-    └── typora-and-markdown/
-        ├── README.md
-        ├── README.en.md
-        ├── chapters/
-        ├── images/
-        └── research/
-```
-
-As the collection grows, more volumes may be added, such as writing tools, knowledge management, research methods, programming foundations, engineering workflows, and algorithms. But the principle stays the same: **write each volume well before opening too many empty tracks.**
+1. Start with Typora Chapter 2 (structure/images/paths)
+2. Then Typora Chapter 3 (Markdown/LaTeX/settings)
+3. Then Git Chapter 0 + Chapter 1 to stabilize version-control habits
 
 ## Navigation
 
-For the top-level catalog, see:
-
 - [CATALOG.en.md](CATALOG.en.md)
 
-## Writing method
+## Editorial method
 
-This project follows a research-first workflow. That means checking documents, comparing standards, and verifying tool behavior before turning the result into textbook prose.
-
-This matters especially for topics like:
-
-- tool differences
-- platform differences
-- syntax compatibility
-- export behavior
-- workflow design
-
-These areas should not be written from memory alone. They need to be checked against official documentation, specifications, and actual behavior.
-
-That is why, whenever possible, each volume includes a research map or source index showing what the text is grounded in.
-
-## Current status
-
-The repository is still under construction. The highest-priority work right now is:
-
-- to keep expanding the first volume, *Typora and Markdown*, into a real textbook,
-- to stabilize its structure, pacing, and quality standard,
-- and only then to replicate that method into future subjects.
+- research-first (official docs, standards, source material),
+- structure-first (maintainability before decoration),
+- revision-ready (chapters should support long-term iteration).
