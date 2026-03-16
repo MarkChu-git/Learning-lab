@@ -1,5 +1,7 @@
 # 《Typora 与 Markdown》
 
+> 语言 / Language：**中文** | [English](README.en.md)
+
 这是教材合集中的第一册。
 
 这一册的目标，不是把 Markdown 写成一张语法小抄，也不是把 Typora 写成一篇软件推荐帖，而是把下面这些核心问题系统讲清楚：
