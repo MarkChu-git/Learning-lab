@@ -10,14 +10,14 @@ This catalog records the volumes that are already active, currently under constr
 
 **Positioning**: an introductory textbook on writing tools and document workflow.
 
-This volume is not just about memorizing Markdown symbols. It is meant to explain the full path from “why use Markdown at all” to “how to build a stable writing workflow in Typora.”
+This volume is not just about memorizing Markdown symbols. It answers: Why use Markdown? What problem does Typora solve? How do you build a stable writing workflow?
 
 Its core scope includes:
 
 - the design idea behind Markdown
 - common syntax and writing structure
 - differences between CommonMark and GitHub Flavored Markdown
-- Typora’s interface, settings, and everyday writing experience
+- Typora's interface, settings, and everyday writing experience
 - image and path management
 - export behavior, YAML, and GitHub rendering differences
 - long-term document maintenance practices
@@ -34,12 +34,12 @@ Current entry points:
 
 **Positioning**: a textbook on version control and publishing collaboration.
 
-This volume is not just about commands. It is meant to explain the whole path from “why version control exists” to “how a stable GitHub-based collaboration and publishing workflow is formed.”
+This volume is not just about commands. It answers: Why does version control exist? How is Git fundamentally different from ordinary backups? How do you build a stable GitHub-based collaboration and publishing workflow?
 
 Its core scope includes:
 
 - the basic idea of version control,
-- Git’s working tree, staging area, commit history, and branching logic,
+- Git's working tree, staging area, commit history, and branching logic,
 - the relationship and division of labor between Git and GitHub,
 - remotes, synchronization, collaboration, review, and publishing,
 - and version-control workflows for long-term writing, project maintenance, and teamwork.

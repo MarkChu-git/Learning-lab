@@ -46,7 +46,7 @@ The original Chinese chapter currently develops the following themes in detail:
 
 4. **Relative paths are the lifeline of a repository-based writing workflow**
    - They move with the repository structure.
-   - They are far more robust than machine-specific absolute paths.
+   - They're far more stable than machine-specific absolute paths.
 
 5. **Typora helps with more than just dragging images in**
    - It can support image copying into a stable folder.
