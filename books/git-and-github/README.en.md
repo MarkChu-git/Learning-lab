@@ -62,19 +62,25 @@ This volume will gradually cover:
 
 - [Chapter 1: What Version Control Is Actually Solving](chapters/01-why-version-control-matters.en.md) ([中文](chapters/01-why-version-control-matters.md))
 
+### Chapter 2
+
+- [Chapter 2: Start Using Git for Real — Working Tree, Staging Area, and Your First Reliable Commit](chapters/02-working-tree-staging-and-first-commit.en.md) ([中文](chapters/02-working-tree-staging-and-first-commit.md))
+
 ## Recommended reading order
 
 ### Track A: complete beginner / wants traction quickly
 
 1. Start with Chapter 0.
 2. Read Chapter 1 to build the mental model.
-3. Then move into the later chapters on working tree, staging, commits, remotes, and branches.
+3. Read Chapter 2 to stabilize the working-tree / staging / history model.
+4. Then move into later chapters on history inspection, undo, branching, synchronization, and collaboration.
 
 ### Track B: knows some commands but feels increasingly messy
 
 1. Start with Chapter 1 to make the conceptual problem clear.
-2. Return to Chapter 0 to stabilize the command loop.
-3. Then move into later chapters on branching, synchronization, and collaboration.
+2. Read Chapter 2 to make the three-layer model concrete.
+3. Return to Chapter 0 to stabilize the command loop.
+4. Then move into later chapters on branching, synchronization, and collaboration.
 
 ## Research materials
 

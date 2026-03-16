@@ -44,6 +44,7 @@
 - [分册说明](books/git-and-github/README.md)
 - [第零章：新手快学版——先把 Git 和 GitHub 用起来](books/git-and-github/chapters/00-practical-quickstart.md) ([English](books/git-and-github/chapters/00-practical-quickstart.en.md))
 - [第一章：先理解版本控制到底在解决什么问题](books/git-and-github/chapters/01-why-version-control-matters.md) ([English](books/git-and-github/chapters/01-why-version-control-matters.en.md))
+- [第二章：真正开始用 Git——工作区、暂存区、提交历史与第一次可靠提交](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.md) ([English](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.en.md))
 - [资料地图](books/git-and-github/research/source-map.md)
 
 ## B. 规划中分册

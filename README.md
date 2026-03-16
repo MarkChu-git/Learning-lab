@@ -36,6 +36,7 @@
 - [分册说明](books/git-and-github/README.md)
 - [第零章：新手快学版](books/git-and-github/chapters/00-practical-quickstart.md) ([English](books/git-and-github/chapters/00-practical-quickstart.en.md))
 - [第一章](books/git-and-github/chapters/01-why-version-control-matters.md) ([English](books/git-and-github/chapters/01-why-version-control-matters.en.md))
+- [第二章](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.md) ([English](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.en.md))
 
 ## 推荐阅读路径
 

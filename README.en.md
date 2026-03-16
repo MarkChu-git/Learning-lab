@@ -37,6 +37,7 @@ Entry points:
 - [Volume introduction](books/git-and-github/README.en.md)
 - [Chapter 0: Practical Quick Start](books/git-and-github/chapters/00-practical-quickstart.en.md) ([中文](books/git-and-github/chapters/00-practical-quickstart.md))
 - [Chapter 1](books/git-and-github/chapters/01-why-version-control-matters.en.md) ([中文](books/git-and-github/chapters/01-why-version-control-matters.md))
+- [Chapter 2](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.en.md) ([中文](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.md))
 
 ## Recommended reading paths
 

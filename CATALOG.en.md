@@ -44,6 +44,7 @@ Current entry points:
 - [Volume introduction](books/git-and-github/README.en.md)
 - [Chapter 0: Practical Quick Start — Get Git and GitHub Working Fast](books/git-and-github/chapters/00-practical-quickstart.en.md) ([中文](books/git-and-github/chapters/00-practical-quickstart.md))
 - [Chapter 1: What Version Control Is Actually Solving](books/git-and-github/chapters/01-why-version-control-matters.en.md) ([中文](books/git-and-github/chapters/01-why-version-control-matters.md))
+- [Chapter 2: Start Using Git for Real — Working Tree, Staging Area, and Your First Reliable Commit](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.en.md) ([中文](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.md))
 - [Research source map](books/git-and-github/research/source-map.md)
 
 ## B. Planned volumes
