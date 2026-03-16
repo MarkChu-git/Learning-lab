@@ -33,6 +33,20 @@
 - [《Typora 与 Markdown》总说明](books/typora-and-markdown/README.md)
 - [第一章：像写作一样使用 Typora 与 Markdown](books/typora-and-markdown/chapters/01-typora-and-markdown.md)
 
+### 2. Git 与 GitHub
+
+这是现在已经正式启动的第二册，主题聚焦在以下几个方面：
+
+- 版本控制到底在解决什么问题
+- Git 和普通文件备份、网盘同步之间的本质差异
+- Git 和 GitHub 分别负责什么，为什么不能混为一谈
+- 提交、分支、远程仓库、协作与发布流程的基本逻辑
+
+入口：
+
+- [《Git 与 GitHub》总说明](books/git-and-github/README.md)
+- [第一章：先理解版本控制到底在解决什么问题](books/git-and-github/chapters/01-why-version-control-matters.md)
+
 ## 仓库结构
 
 当前教材合集采用按“分册”组织的方式。每一册教材都有自己的说明文件、章节目录和研究资料目录。这样做的好处有两点：

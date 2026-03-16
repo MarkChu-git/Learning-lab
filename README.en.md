@@ -34,6 +34,21 @@ Entry points:
 - [Chapter 1 overview (English entry)](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md)
 - [Original Chapter 1 in Chinese](books/typora-and-markdown/chapters/01-typora-and-markdown.md)
 
+### 2. Git and GitHub
+
+This is now the second officially started volume. Its focus includes:
+
+- what problem version control is actually solving,
+- how Git differs from ordinary backup or cloud sync habits,
+- what Git is responsible for versus what GitHub is responsible for,
+- and the basic logic of commits, branches, remotes, collaboration, and publishing.
+
+Entry points:
+
+- [Volume introduction: Git and GitHub](books/git-and-github/README.en.md)
+- [Chapter 1 overview (English entry)](books/git-and-github/chapters/01-why-version-control-matters.en.md)
+- [Original Chapter 1 in Chinese](books/git-and-github/chapters/01-why-version-control-matters.md)
+
 ## Repository structure
 
 The collection is currently organized by volume. Each volume has its own introduction, chapter directory, and research directory.

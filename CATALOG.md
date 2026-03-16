@@ -30,23 +30,39 @@
 - [第三章：真正开始写文档——Markdown 基础语法、LaTeX 公式与 Typora 设置](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.md)
 - [资料地图](books/typora-and-markdown/research/source-map.md)
 
+### A2. Git 与 GitHub
+
+**定位**：版本控制与发布协作教材。
+
+这一册不只是教命令，而是要把从“为什么版本控制存在”到“如何在 GitHub 上形成稳定协作与发布工作流”这一整条路径讲清楚。
+
+核心覆盖范围包括：
+
+- 版本控制的基本思想
+- Git 的工作区、暂存区、提交历史与分支逻辑
+- Git 和 GitHub 的关系与分工
+- 远程仓库、同步、协作、审阅与发布
+- 长期写作、项目维护和团队协作中的版本控制工作流
+
+当前入口：
+
+- [分册说明](books/git-and-github/README.md)
+- [第一章：先理解版本控制到底在解决什么问题](books/git-and-github/chapters/01-why-version-control-matters.md)
+- [资料地图](books/git-and-github/research/source-map.md)
+
 ## B. 规划中分册
 
 以下方向是教材合集后续适合逐步加入的主题，但并不代表会立刻同时开写。只有当前一册的结构方法稳定后，才会继续往下扩。
 
-### B1. Git 与 GitHub
-
-**定位**：版本控制与发布协作教材。
-
-### B2. 知识管理与文档结构设计
+### B1. 知识管理与文档结构设计
 
 **定位**：个人知识库、目录体系、命名与长期维护教材。
 
-### B3. 算法与数据结构
+### B2. 算法与数据结构
 
 **定位**：系统化算法教材，而不是刷题答案集。
 
-### B4. AI 工具工作流
+### B3. AI 工具工作流
 
 **定位**：围绕 Claude、Codex、OpenCode、MCP、自动化的实践教材。
 
