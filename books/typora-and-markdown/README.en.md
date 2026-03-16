@@ -36,18 +36,15 @@ This volume will gradually cover the following topics:
 
 ### Chapter 1
 
-- [Chapter 1 overview (English)](chapters/01-typora-and-markdown.en.md)
-- [Original Chapter 1 in Chinese](chapters/01-typora-and-markdown.md)
+- [Chapter 1: Writing with Typora and Markdown](chapters/01-typora-and-markdown.en.md) ([中文](chapters/01-typora-and-markdown.md))
 
 ### Chapter 2
 
-- [Chapter 2 overview (English)](chapters/02-structure-images-and-paths.en.md)
-- [Original Chapter 2 in Chinese](chapters/02-structure-images-and-paths.md)
+- [Chapter 2: Structure, Images, and Paths](chapters/02-structure-images-and-paths.en.md) ([中文](chapters/02-structure-images-and-paths.md))
 
 ### Chapter 3
 
-- [Chapter 3 overview (English)](chapters/03-markdown-latex-and-typora-settings.en.md)
-- [Original Chapter 3 in Chinese](chapters/03-markdown-latex-and-typora-settings.md)
+- [Chapter 3: Markdown, LaTeX, and Typora Settings](chapters/03-markdown-latex-and-typora-settings.en.md) ([中文](chapters/03-markdown-latex-and-typora-settings.md))
 
 ## Research materials
 

@@ -25,9 +25,9 @@ Its core scope includes:
 Current entry points:
 
 - [Volume introduction](books/typora-and-markdown/README.en.md)
-- [Chapter 1 overview (English)](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md)
-- [Chapter 2 overview (English)](books/typora-and-markdown/chapters/02-structure-images-and-paths.en.md)
-- [Chapter 3 overview (English)](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.en.md)
+- [Chapter 1: Writing with Typora and Markdown](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md) ([中文](books/typora-and-markdown/chapters/01-typora-and-markdown.md))
+- [Chapter 2: Structure, Images, and Paths](books/typora-and-markdown/chapters/02-structure-images-and-paths.en.md) ([中文](books/typora-and-markdown/chapters/02-structure-images-and-paths.md))
+- [Chapter 3: Markdown, LaTeX, and Typora Settings](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.en.md) ([中文](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.md))
 - [Research source map](books/typora-and-markdown/research/source-map.md)
 
 ### A2. Git and GitHub
@@ -47,7 +47,7 @@ Its core scope includes:
 Current entry points:
 
 - [Volume introduction](books/git-and-github/README.en.md)
-- [Chapter 1 overview (English entry)](books/git-and-github/chapters/01-why-version-control-matters.en.md)
+- [Chapter 1: Why Version Control Matters](books/git-and-github/chapters/01-why-version-control-matters.en.md) ([中文](books/git-and-github/chapters/01-why-version-control-matters.md))
 - [Research source map](books/git-and-github/research/source-map.md)
 
 ## B. Planned volumes

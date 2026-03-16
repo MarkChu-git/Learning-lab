@@ -31,11 +31,15 @@
 入口：
 
 - [《Typora 与 Markdown》总说明](books/typora-and-markdown/README.md)
-- [第一章：像写作一样使用 Typora 与 Markdown](books/typora-and-markdown/chapters/01-typora-and-markdown.md)
+- [第一章：像写作一样使用 Typora 与 Markdown](books/typora-and-markdown/chapters/01-typora-and-markdown.md) ([English](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md))
 
 ### 2. Git 与 GitHub
 
-这是现在已经正式启动的第二册，主题聚焦在以下几个方面：
+这是现在已经正式启动的第二册。
+
+很多人觉得 Git "很重要但很难学"，往往是因为一开始学的不是"版本控制在解决什么问题"，而只是"几条命令怎么敲"。这一册的目标，是把从"为什么版本控制存在"到"如何形成稳定的协作与发布工作流"这一整条路径讲清楚。
+
+主题聚焦在以下几个方面：
 
 - 版本控制到底在解决什么问题
 - Git 和普通文件备份、网盘同步之间的本质差异
@@ -45,7 +49,7 @@
 入口：
 
 - [《Git 与 GitHub》总说明](books/git-and-github/README.md)
-- [第一章：先理解版本控制到底在解决什么问题](books/git-and-github/chapters/01-why-version-control-matters.md)
+- [第一章：先理解版本控制到底在解决什么问题](books/git-and-github/chapters/01-why-version-control-matters.md) ([English](books/git-and-github/chapters/01-why-version-control-matters.en.md))
 
 ## 仓库结构
 

@@ -31,8 +31,7 @@ This is the first volume currently under active expansion. Its focus includes:
 Entry points:
 
 - [Volume introduction: Typora and Markdown](books/typora-and-markdown/README.en.md)
-- [Chapter 1 overview (English entry)](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md)
-- [Original Chapter 1 in Chinese](books/typora-and-markdown/chapters/01-typora-and-markdown.md)
+- [Chapter 1: Writing with Typora and Markdown](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md) ([中文](books/typora-and-markdown/chapters/01-typora-and-markdown.md))
 
 ### 2. Git and GitHub
 
@@ -46,8 +45,7 @@ This is now the second officially started volume. Its focus includes:
 Entry points:
 
 - [Volume introduction: Git and GitHub](books/git-and-github/README.en.md)
-- [Chapter 1 overview (English entry)](books/git-and-github/chapters/01-why-version-control-matters.en.md)
-- [Original Chapter 1 in Chinese](books/git-and-github/chapters/01-why-version-control-matters.md)
+- [Chapter 1: Why Version Control Matters](books/git-and-github/chapters/01-why-version-control-matters.en.md) ([中文](books/git-and-github/chapters/01-why-version-control-matters.md))
 
 ## Repository structure
 

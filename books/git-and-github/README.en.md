@@ -36,8 +36,7 @@ This volume will gradually cover:
 
 ### Chapter 1
 
-- [Chapter 1 overview (English entry)](chapters/01-why-version-control-matters.en.md)
-- [Original Chapter 1 in Chinese](chapters/01-why-version-control-matters.md)
+- [Chapter 1: Why Version Control Matters](chapters/01-why-version-control-matters.en.md) ([中文](chapters/01-why-version-control-matters.md))
 
 ## Research materials
 
