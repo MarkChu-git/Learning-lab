@@ -27,6 +27,7 @@ Current entry points:
 - [Volume introduction](books/typora-and-markdown/README.en.md)
 - [Chapter 1 overview (English)](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md)
 - [Chapter 2 overview (English)](books/typora-and-markdown/chapters/02-structure-images-and-paths.en.md)
+- [Chapter 3 overview (English)](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.en.md)
 - [Research source map](books/typora-and-markdown/research/source-map.md)
 
 ## B. Planned volumes

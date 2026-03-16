@@ -44,6 +44,11 @@ This volume will gradually cover the following topics:
 - [Chapter 2 overview (English)](chapters/02-structure-images-and-paths.en.md)
 - [Original Chapter 2 in Chinese](chapters/02-structure-images-and-paths.md)
 
+### Chapter 3
+
+- [Chapter 3 overview (English)](chapters/03-markdown-latex-and-typora-settings.en.md)
+- [Original Chapter 3 in Chinese](chapters/03-markdown-latex-and-typora-settings.md)
+
 ## Research materials
 
 To avoid turning this volume into undocumented personal experience, a source map has already been prepared to show the main references behind the text:

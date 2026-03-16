@@ -73,6 +73,14 @@
 - 角色：增强功能资料。
 - 主要用于回答的问题：公式、自动编号、版本变化与较高级写作能力如何在 Typora 中落地。
 
+### 13. Typora Support — Markdown Reference / Shortcut Keys / Images / YAML
+- 链接：<https://support.typora.io/Markdown-Reference/>
+- 链接：<https://support.typora.io/Shortcut-Keys/>
+- 链接：<https://support.typora.io/Images/>
+- 链接：<https://support.typora.io/YAML/>
+- 角色：语法、操作与设置联动资料。
+- 主要用于回答的问题：Markdown 基础语法在 Typora 中如何输入、快捷键如何提升高频写作动作、图片设置如何影响文档资源管理、YAML 与文档级配置如何影响图片根路径和导出行为。
+
 ## 五、编写原则
 
 本教程后续写作将遵循以下资料使用原则。

@@ -42,6 +42,10 @@
 
 - [第二章：把文档写成可以长期维护的样子——目录、图片、相对路径与仓库组织](chapters/02-structure-images-and-paths.md)
 
+### 第三章
+
+- [第三章：真正开始写文档——Markdown 基础语法、LaTeX 公式与 Typora 设置](chapters/03-markdown-latex-and-typora-settings.md)
+
 ## 研究资料
 
 为了避免把这一册写成经验口述，当前已经整理了一份资料地图，用来说明正文背后的主要依据：
