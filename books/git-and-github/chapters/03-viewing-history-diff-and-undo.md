@@ -4,61 +4,25 @@
 
 ## 本章你会学到什么
 
-- 如何查看 Git 的提交历史，找到你需要的那次提交
-- 如何比较不同版本之间的差异
-- 如何安全地撤销错误的修改
-- 理解 `git restore`、`git reset`、`git revert` 三种撤销方式的区别
-- 掌握在不同场景下选择正确的撤销方法
+- 用 `git log` 查看提交历史，找到你需要的那次提交
+- 用 `git diff` 比较不同版本之间的差异
+- 用 `git restore`、`git reset`、`git revert` 安全地撤销错误
+- 理解三种撤销方式的本质区别和使用场景
 
-## 为什么需要学这个
+## 当代码突然出问题
 
-想象一下这样的场景：
+代码昨天还能跑，今天就崩了。你盯着屏幕上的错误信息，第一反应是："我到底改了什么？"
 
-你正在写一篇文档，昨天还好好的，今天打开一看，某个段落突然变得很奇怪。你记得自己改过这里，但不记得具体改了什么。如果没有版本控制，你只能凭记忆慢慢回想，或者干脆重写。
+没有 Git，你只能凭记忆猜测，或者一行行对比代码。有了 Git，你可以看到每一次修改的完整历史，比较任意两个版本的差异，甚至撤销错误的修改。
 
-但如果你用了 Git，这个问题就变得简单了：你可以查看历史记录，看看这个段落在过去几天里经历了什么变化，找到是哪次修改导致了问题，然后精准地撤销那次修改。
+这一章教你如何使用这些能力。我们会从查看历史开始，然后学习如何比较差异，最后——这可能是最重要的部分——学习如何安全地撤销错误。"安全地"这个词很关键，因为 Git 提供了好几种撤销方式，有些很温和，有些很激进。选错了方式，你可能会丢失工作成果。
 
-这就是 Git 的"时间旅行"能力——它不仅能记录你的每一次修改，还能让你随时回到过去，查看、比较、甚至撤销任何一次修改。
+## 查看提交历史：Git 的时光机
 
-这种能力在以下场景中特别有用：
-
-- **找 bug**：代码突然出问题了，你需要找到是哪次提交引入的 bug
-- **对比版本**：你想看看这周和上周的文档有什么区别
-- **撤销错误**：你不小心删除了重要内容，想要恢复
-- **实验新想法**：你想尝试一个新方案，但又担心搞砸，需要随时能退回来
-
-在这一章，我们会系统学习如何使用 Git 的这些"时间旅行"功能。
-
-## 查看提交历史：Git 的时间线
-
-### 这是什么
-
-Git 的提交历史就像一条时间线，记录了你的项目从诞生到现在的每一次变化。每次你运行 `git commit`，Git 就会在这条时间线上添加一个新的节点，记录下当时的项目状态。
-
-查看提交历史，就是沿着这条时间线往回看，了解项目是如何一步步演变到现在的样子的。
-
-### 为什么需要它
-
-提交历史不只是一份"日志"，它是你理解项目演进的关键工具：
-
-- **追溯变化**：某个功能是什么时候加入的？
-- **定位问题**：bug 是在哪次提交中引入的？
-- **理解决策**：为什么当时要这样修改？（通过提交信息）
-- **团队协作**：其他人最近做了什么修改？
-
-### 怎么用
-
-#### 最基本的用法：`git log`
-
-打开终端，在你的 Git 仓库中运行：
+打开 `git log`，Git 会告诉你每一次提交的完整信息：
 
 ```bash
 $ git log
-```
-
-你会看到类似这样的输出：
-
-```
 commit 61b6377a8c9f2e4d3b1a5c6e7f8g9h0i1j2k3l4m
 Author: Mark <mark@example.com>
 Date:   Sun Mar 16 23:48:15 2026 +0800
@@ -70,194 +34,120 @@ Author: Mark <mark@example.com>
 Date:   Sun Mar 16 20:30:42 2026 +0800
 
     docs: add beginner fast-track chapters and expand EN i18n content
-
-commit 96ff8b5c6d7e8f9g0h1i2j3k4l5m6n7o8p9q0r1s
-Author: Mark <mark@example.com>
-Date:   Sat Mar 15 18:22:10 2026 +0800
-
-    Humanize textbook content: remove formulaic patterns and AI-sounding phrases
 ```
 
-每个提交包含四部分信息：
+每个提交包含四部分：提交 ID（那串40位的 SHA-1 哈希值）、作者、日期、提交信息。提交 ID 是这次提交的"身份证"，但通常前7位就够用了。默认情况下，`git log` 按时间倒序显示——最新的提交在最上面。
 
-1. **commit ID**（提交 ID）：一串很长的字符，是这次提交的唯一标识
-2. **Author**（作者）：谁做的这次提交
-3. **Date**（日期）：什么时候提交的
-4. **提交信息**：这次提交做了什么
+### 简化输出
 
-#### 更简洁的视图：`git log --oneline`
-
-如果你觉得默认的输出太啰嗦，可以用 `--oneline` 参数：
+嫌输出太啰嗦？`--oneline` 把每个提交压缩成一行：
 
 ```bash
 $ git log --oneline
-```
-
-输出会变成这样：
-
-```
-61b6377 docs: add git chapter on working tree staging and first commit
-4d64e45 docs: add beginner fast-track chapters and expand EN i18n content
-96ff8b5 Humanize textbook content: remove formulaic patterns and AI-sounding phrases
-e737406 Humanize Git-and-GitHub volume: improve clarity, flow, and beginner accessibility
+61b6377 docs: add git chapter on working tree
+4d64e45 docs: add beginner fast-track chapters
+96ff8b5 Humanize textbook content
+e737406 Humanize Git-and-GitHub volume
 f2ca9ca Start Git and GitHub textbook volume
 ```
 
-每行一个提交，只显示：
-- 提交 ID 的前7位（足够用来识别了）
-- 提交信息
+现在清爽多了。每行一个提交，ID + 提交信息，一目了然。
 
-这种格式特别适合快速浏览历史。
-
-#### 可视化分支历史：`git log --graph`
-
-如果你的项目有分支（我们会在第四章详细讲分支），可以用 `--graph` 参数来可视化：
+如果你的项目有分支（我们第四章会详细讲），`--graph` 会画出分支的"家族树"：
 
 ```bash
 $ git log --oneline --graph --all
+* 61b6377 docs: add git chapter
+* 4d64e45 docs: add beginner chapters
+*   96ff8b5 Merge branch 'feature'
+|\
+| * e737406 Add new feature
+* | f2ca9ca Fix bug
+|/
+* a1b2c3d Initial commit
 ```
 
-输出会像这样：
+这些星号和线条不是装饰——它们展示了代码如何从主线分叉、又合并回来。`--all` 显示所有分支，不只是当前分支。
 
-```
-* 61b6377 docs: add git chapter on working tree staging and first commit
-* 4d64e45 docs: add beginner fast-track chapters and expand EN i18n content
-* 96ff8b5 Humanize textbook content: remove formulaic patterns
-* e737406 Humanize Git-and-GitHub volume
-* f2ca9ca Start Git and GitHub textbook volume
-```
+### 查看详细改动
 
-`--all` 参数表示显示所有分支的历史，而不只是当前分支。
-
-#### 查看具体改动：`git log -p`
-
-如果你想看每次提交具体改了什么内容，可以用 `-p` 参数（p 代表 patch，补丁）：
+想看具体改了什么？`-p` 显示每次提交的完整 diff：
 
 ```bash
-$ git log -p
+$ git log -p -2    # 最近2次提交的详细改动
 ```
 
-这会在每个提交信息后面显示详细的改动内容（类似 `git diff` 的输出）。
+Git 会显示每个文件的每一行变化。绿色的 `+` 是新增的，红色的 `-` 是删除的。`-2` 限制只看最近2次提交，否则输出会很长。
 
-**注意**：这个命令的输出会非常长，适合用来查看最近几次提交的详细改动。你可以加上 `-2` 参数只看最近2次提交：
+如果你只想看统计信息（改了几个文件、增删了多少行），用 `--stat`：
 
 ```bash
-$ git log -p -2
+$ git log --stat
+commit 61b6377a8c9f2e4d3b1a5c6e7f8g9h0i1j2k3l4m
+Author: Mark <mark@example.com>
+Date:   Sun Mar 16 23:48:15 2026 +0800
+
+    docs: add git chapter
+
+ chapter-03.md | 245 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 245 insertions(+)
 ```
 
-#### 搜索特定提交：`git log --grep`
+这在你想快速了解一次提交的规模时很有用。
 
-如果你记得提交信息中的某个关键词，可以用 `--grep` 来搜索：
+### 搜索和过滤
+
+记得提交信息里有个关键词，但忘了是哪次提交？`--grep` 搜索提交信息：
 
 ```bash
-$ git log --grep="chapter"
+$ git log --grep="chapter"    # 找所有提到"chapter"的提交
 ```
 
-这会列出所有提交信息中包含"chapter"的提交。
-
-#### 查看特定作者的提交：`git log --author`
-
-如果你想看某个人的提交历史：
+想看某个人的提交历史？`--author` 按作者过滤：
 
 ```bash
 $ git log --author="Mark"
 ```
 
-#### 查看单个提交的详细信息：`git show`
+这在团队协作时特别有用——你可以看到队友最近在忙什么。
 
-如果你想查看某个特定提交的详细信息，可以用 `git show`：
+按时间过滤用 `--since` 和 `--until`：
+
+```bash
+$ git log --since="2 weeks ago"
+$ git log --since="2026-03-01" --until="2026-03-15"
+```
+
+Git 很聪明，能理解"2 weeks ago"、"yesterday"、"3 days"这样的自然语言。
+
+### 查看单个提交
+
+如果你知道提交 ID，想看这次提交的完整信息，用 `git show`：
 
 ```bash
 $ git show 61b6377
 ```
 
-这会显示：
-- 提交的完整信息（作者、日期、提交信息）
-- 这次提交改动的详细内容
+它会显示提交信息、作者、时间，以及这次提交的完整 diff。这在追踪 bug 时特别有用——找到引入 bug 的提交后，用 `git show` 看看那次到底改了什么。
 
-### 实战演练：找到引入 bug 的提交
+### 常用选项速查
 
-**场景**：你发现文档中有个错误，想找到是哪次提交引入的。
-
-**前置条件**：你有一个 Git 仓库，里面有一些提交历史。
-
-**操作步骤**：
-
-**第1步：查看最近的提交历史**
-
-```bash
-$ git log --oneline -10
-```
-
-输出：
-```
-61b6377 docs: add git chapter on working tree staging and first commit
-4d64e45 docs: add beginner fast-track chapters
-96ff8b5 Humanize textbook content
-e737406 Humanize Git-and-GitHub volume
-f2ca9ca Start Git and GitHub textbook volume
-...
-```
-
-**第2步：如果你记得错误相关的关键词，用 grep 搜索**
-
-假设错误和"staging"相关：
-
-```bash
-$ git log --grep="staging"
-```
-
-输出：
-```
-commit 61b6377a8c9f2e4d3b1a5c6e7f8g9h0i1j2k3l4m
-Author: Mark <mark@example.com>
-Date:   Sun Mar 16 23:48:15 2026 +0800
-
-    docs: add git chapter on working tree staging and first commit
-```
-
-**第3步：查看这次提交的详细改动**
-
-```bash
-$ git show 61b6377
-```
-
-这会显示这次提交改了哪些文件、改了什么内容。你可以从中找到引入错误的具体位置。
-
-**验证结果**：你找到了引入错误的提交，知道了是什么时候、谁、为什么引入的这个错误。
-
-**可能遇到的问题**：
-
-- **问题1**：`git log` 输出太多，看不过来
-  - **解决**：用 `git log --oneline` 简化输出，或者用 `-10` 参数只看最近10次提交
-
-- **问题2**：不记得关键词，不知道怎么搜索
-  - **解决**：用 `git log -p` 查看详细改动，或者用 `git log --all --source -- <文件路径>` 查看某个文件的修改历史
+| 选项 | 作用 |
+|------|------|
+| `-p` | 显示每次提交的详细改动 |
+| `--stat` | 显示文件修改统计 |
+| `--oneline` | 每个提交一行 |
+| `--graph` | 显示分支图 |
+| `--all` | 显示所有分支 |
+| `-<n>` | 只显示最近 n 次提交 |
+| `--since`, `--after` | 指定时间之后的提交 |
+| `--until`, `--before` | 指定时间之前的提交 |
+| `--author` | 按作者过滤 |
+| `--grep` | 搜索提交信息 |
 
 ## 比较差异：看看改了什么
 
-### 这是什么
-
-在 Git 中，"差异"（diff）指的是两个版本之间的不同。Git 可以帮你比较：
-- 工作区和暂存区的差异
-- 暂存区和最新提交的差异
-- 任意两个提交之间的差异
-- 某个文件在不同版本中的差异
-
-这就像是在两份文档之间做"对比"，Git 会告诉你哪些行被添加了、哪些行被删除了、哪些行被修改了。
-
-### 为什么需要它
-
-比较差异是 Git 中最常用的操作之一：
-
-- **提交前检查**：确认你即将提交的内容是否正确
-- **理解变化**：看看某个文件从上周到现在改了什么
-- **代码审查**：检查别人的修改是否合理
-- **调试问题**：对比正常版本和有问题的版本，找出差异
-
-### 怎么用
-
-还记得第二章讲的 Git 三层模型吗？
+Git 可以比较任意两个版本之间的差异。还记得第二章讲的三层模型吗？
 
 ```
 工作区（Working Directory）
@@ -269,15 +159,13 @@ $ git show 61b6377
 
 `git diff` 就是用来比较这三层之间的差异的。
 
-#### 比较工作区和暂存区：`git diff`
+### 工作区 vs 暂存区
 
-这是最常用的命令，用来查看"你刚刚修改了什么，但还没有 add"：
+最常用的命令，查看"你刚刚修改了什么，但还没有 add"：
 
 ```bash
 $ git diff
 ```
-
-**场景**：你修改了一个文件，但还没有运行 `git add`，想看看自己改了什么。
 
 假设你修改了 `README.md`，输出会像这样：
 
@@ -293,15 +181,11 @@ index 1234567..abcdefg 100644
 +这是一个持续建设中的教材仓库，目标是把不同主题写成真正可读、可学、可复习的长期教材。
 ```
 
-解读这个输出：
-- `---` 开头的行：旧版本（暂存区中的版本）
-- `+++` 开头的行：新版本（工作区中的版本）
-- `-` 开头的行：被删除的内容（红色显示）
-- `+` 开头的行：被添加的内容（绿色显示）
+`-` 开头的行是旧内容（红色），`+` 开头的行是新内容（绿色）。`@@ -1,4 +1,4 @@` 告诉你这个改动在文件的哪个位置。
 
-#### 比较暂存区和最新提交：`git diff --staged`
+### 暂存区 vs 最新提交
 
-这个命令用来查看"你已经 add 了什么，即将 commit 的内容"：
+查看"你已经 add 了什么，即将 commit 的内容"：
 
 ```bash
 $ git diff --staged
@@ -313,9 +197,9 @@ $ git diff --staged
 $ git diff --cached
 ```
 
-**场景**：你运行了 `git add`，想在 commit 之前再确认一下即将提交的内容。
+这个命令在提交前特别有用——你可以再确认一遍即将提交的内容是否正确。
 
-#### 比较任意两个提交：`git diff <commit1> <commit2>`
+### 比较任意两个提交
 
 你可以比较任意两个提交之间的差异：
 
@@ -325,109 +209,53 @@ $ git diff 61b6377 4d64e45
 
 这会显示从提交 `61b6377` 到提交 `4d64e45` 之间的所有改动。
 
-**提示**：你也可以用 `HEAD` 来代表最新的提交：
+用 `HEAD` 代表最新的提交：
 
 ```bash
-$ git diff HEAD~1 HEAD
+$ git diff HEAD~1 HEAD    # 最近一次提交的改动
 ```
 
-`HEAD~1` 表示"最新提交的上一个提交"，所以这个命令会显示最近一次提交的改动。
+`HEAD~1` 表示"最新提交的上一个提交"，`HEAD~2` 是上上个，以此类推。
 
-#### 查看特定文件的差异
+### 只看特定文件
 
-如果你只想看某个文件的差异，可以在命令后面加上文件路径：
+如果你只想看某个文件的差异，在命令后面加上文件路径：
 
 ```bash
 $ git diff README.md
-```
-
-或者比较两个提交中某个文件的差异：
-
-```bash
 $ git diff 61b6377 4d64e45 README.md
 ```
 
-### 实战演练：确认即将提交的内容
+### 实战：提交前的最后检查
 
-**场景**：你修改了几个文件，想在提交前确认一下改动是否正确。
-
-**前置条件**：你已经修改了一些文件，有些已经 `git add`，有些还没有。
-
-**操作步骤**：
-
-**第1步：查看工作区的改动（还没 add 的）**
+你修改了几个文件，有些已经 `git add`，有些还没有。提交前，你想确认一下改动是否正确：
 
 ```bash
+# 1. 查看工作区的改动（还没 add 的）
 $ git diff
-```
 
-输出会显示所有还没有 add 的改动。
-
-**第2步：查看暂存区的改动（已经 add 的）**
-
-```bash
+# 2. 查看暂存区的改动（已经 add 的）
 $ git diff --staged
+
+# 3. 如果发现问题，继续修改文件，然后重新 add
+$ git add <文件名>
+
+# 4. 再次确认
+$ git diff --staged
+
+# 5. 确认无误后提交
+$ git commit -m "docs: update README"
 ```
 
-输出会显示所有已经 add、即将 commit 的改动。
-
-**第3步：如果发现问题，可以继续修改**
-
-如果你发现某个改动不对，可以：
-- 继续修改文件
-- 重新 `git add`
-- 再次用 `git diff --staged` 确认
-
-**第4步：确认无误后提交**
-
-```bash
-$ git commit -m "docs: update README with project description"
-```
-
-**验证结果**：你清楚地知道自己提交了什么内容，避免了误提交。
-
-**可能遇到的问题**：
-
-- **问题1**：`git diff` 输出太多，看不清楚
-  - **解决**：用 `git diff <文件路径>` 只看特定文件的差异
-
-- **问题2**：不知道某个改动是在工作区还是暂存区
-  - **解决**：先运行 `git status` 查看文件状态，再决定用 `git diff` 还是 `git diff --staged`
+这个流程能帮你避免误提交。
 
 ## 撤销操作：Git 的三种武器
 
-### 这是什么
+在 Git 中，"撤销"有很多种含义：撤销工作区的修改、撤销暂存区的修改、撤销已经提交的修改、撤销已经推送的修改。Git 提供了三个主要的撤销命令，它们的使用场景完全不同。
 
-在 Git 中，"撤销"有很多种含义：
-- 撤销工作区的修改（还没 add）
-- 撤销暂存区的修改（已经 add，但还没 commit）
-- 撤销已经提交的修改（已经 commit）
-- 撤销已经推送的修改（已经 push）
+### 场景1：撤销工作区的修改（还没 add）
 
-Git 提供了三个主要的撤销命令：
-1. **`git restore`**：撤销工作区或暂存区的修改（Git 2.23+ 新命令）
-2. **`git reset`**：移动分支指针，重置暂存区和工作区
-3. **`git revert`**：创建一个新提交来撤销旧提交
-
-这三个命令的使用场景完全不同，选错了可能会导致数据丢失。
-
-### 为什么需要它
-
-人都会犯错：
-- 不小心删除了重要内容
-- 提交了不该提交的文件
-- 提交信息写错了
-- 整个功能开发方向错了
-
-Git 的撤销功能就是你的"后悔药"，但你需要知道在什么情况下吃哪种药。
-
-### 怎么用
-
-#### 场景1：撤销工作区的修改（还没 add）
-
-**情况**：你修改了一个文件，但还没有运行 `git add`，现在想撤销这些修改。
-
-**命令**：
+你修改了一个文件，但还没有运行 `git add`，现在想撤销这些修改：
 
 ```bash
 $ git restore <文件名>
@@ -447,8 +275,6 @@ $ echo "错误的内容" >> README.md
 
 # 2. 查看状态
 $ git status
-
-# 输出：
 On branch main
 Changes not staged for commit:
   modified:   README.md
@@ -458,21 +284,17 @@ $ git restore README.md
 
 # 4. 再次查看状态
 $ git status
-
-# 输出：
 On branch main
 nothing to commit, working tree clean
 ```
 
-**注意**：`git restore` 会直接丢弃你的修改，无法恢复！使用前请确认。
+**警告**：`git restore` 会直接丢弃你的修改，无法恢复！使用前请确认。
 
 **旧命令**：在 Git 2.23 之前，使用 `git checkout -- <文件名>`，现在不推荐使用。
 
-#### 场景2：撤销暂存区的修改（已经 add，但还没 commit）
+### 场景2：撤销暂存区的修改（已经 add，但还没 commit）
 
-**情况**：你运行了 `git add`，但还没有 commit，现在想把文件从暂存区移除（但保留工作区的修改）。
-
-**命令**：
+你运行了 `git add`，但还没有 commit，现在想把文件从暂存区移除（但保留工作区的修改）：
 
 ```bash
 $ git restore --staged <文件名>
@@ -487,8 +309,6 @@ $ git add README.md
 
 # 2. 查看状态
 $ git status
-
-# 输出：
 On branch main
 Changes to be committed:
   modified:   README.md
@@ -498,40 +318,32 @@ $ git restore --staged README.md
 
 # 4. 再次查看状态
 $ git status
-
-# 输出：
 On branch main
 Changes not staged for commit:
   modified:   README.md
 ```
 
-现在文件又回到了"已修改但未暂存"的状态。
+现在文件又回到了"已修改但未暂存"的状态。如果你想连工作区的修改也撤销，再运行一次 `git restore README.md`。
 
 **旧命令**：在 Git 2.23 之前，使用 `git reset HEAD <文件名>`。
 
-#### 场景3：撤销已经提交的修改（还没 push）
+### 场景3：撤销已经提交的修改（还没 push）
 
 这是最复杂的场景，有三种方法：`git reset` 的三种模式。
 
-##### 方法1：`git reset --soft`（只移动 HEAD）
+#### 方法1：`git reset --soft`（只移动 HEAD）
 
-**效果**：撤销提交，但保留暂存区和工作区的修改。
-
-**使用场景**：你想重新编辑提交信息，或者把多个提交合并成一个。
+撤销提交，但保留暂存区和工作区的修改。适合你想重新编辑提交信息，或者把多个提交合并成一个。
 
 ```bash
 $ git reset --soft HEAD~1
 ```
-
-`HEAD~1` 表示"当前提交的上一个提交"。
 
 **示例**：
 
 ```bash
 # 1. 查看提交历史
 $ git log --oneline
-
-# 输出：
 abc1234 docs: add chapter 3
 def5678 docs: add chapter 2
 
@@ -540,8 +352,6 @@ $ git reset --soft HEAD~1
 
 # 3. 查看状态
 $ git status
-
-# 输出：
 On branch main
 Changes to be committed:
   new file:   chapter-03.md
@@ -549,11 +359,9 @@ Changes to be committed:
 
 现在最近一次提交被撤销了，但文件还在暂存区，你可以重新提交。
 
-##### 方法2：`git reset --mixed`（默认模式）
+#### 方法2：`git reset --mixed`（默认模式）
 
-**效果**：撤销提交，重置暂存区，但保留工作区的修改。
-
-**使用场景**：你想撤销提交，重新整理要提交的文件。
+撤销提交，重置暂存区，但保留工作区的修改。适合你想撤销提交，重新整理要提交的文件。
 
 ```bash
 $ git reset HEAD~1
@@ -573,8 +381,6 @@ $ git reset HEAD~1
 
 # 2. 查看状态
 $ git status
-
-# 输出：
 On branch main
 Changes not staged for commit:
   modified:   chapter-03.md
@@ -582,11 +388,9 @@ Changes not staged for commit:
 
 现在文件回到了"已修改但未暂存"的状态。
 
-##### 方法3：`git reset --hard`（最危险）
+#### 方法3：`git reset --hard`（最危险）
 
-**效果**：撤销提交，重置暂存区和工作区，**完全丢弃所有修改**。
-
-**使用场景**：你确定要完全放弃这次提交的所有内容。
+撤销提交，重置暂存区和工作区，**完全丢弃所有修改**。适合你确定要完全放弃这次提交的所有内容。
 
 ```bash
 $ git reset --hard HEAD~1
@@ -602,15 +406,13 @@ $ git reset --hard HEAD~1
 
 # 2. 查看状态
 $ git status
-
-# 输出：
 On branch main
 nothing to commit, working tree clean
 ```
 
 所有修改都消失了。
 
-##### 三种模式的对比
+#### 三种模式的对比
 
 | 模式 | 移动 HEAD | 重置暂存区 | 重置工作区 | 使用场景 |
 |------|-----------|------------|------------|----------|
@@ -623,19 +425,17 @@ nothing to commit, working tree clean
 - `--mixed`：中等，动 HEAD 和暂存区
 - `--hard`：最狠，全都动
 
-#### 场景4：撤销已经推送的修改（已经 push）
+### 场景4：撤销已经推送的修改（已经 push）
 
 **重要原则**：如果你已经把提交推送到远程仓库，**不要使用 `git reset`**！
 
-为什么？因为 `git reset` 会改写历史，如果别人已经基于你的提交开始工作，你改写历史会导致他们的工作出问题。
+为什么？因为 `git reset` 会改写历史。如果别人已经基于你的提交开始工作，你改写历史会导致他们的工作出问题。
 
 **正确做法**：使用 `git revert`。
 
-##### `git revert`：创建新提交来撤销
+#### `git revert`：创建新提交来撤销
 
-**效果**：创建一个新的提交，这个提交的内容是"撤销某个旧提交的修改"。
-
-**使用场景**：撤销已经推送的提交。
+`git revert` 不会删除旧提交，而是创建一个新的提交，这个提交的内容是"撤销某个旧提交的修改"。
 
 ```bash
 $ git revert <提交ID>
@@ -646,8 +446,6 @@ $ git revert <提交ID>
 ```bash
 # 1. 查看提交历史
 $ git log --oneline
-
-# 输出：
 abc1234 docs: add wrong content
 def5678 docs: add chapter 2
 
@@ -663,22 +461,22 @@ $ git revert abc1234
 
 # 4. 查看提交历史
 $ git log --oneline
-
-# 输出：
 xyz9012 Revert "docs: add wrong content"
 abc1234 docs: add wrong content
 def5678 docs: add chapter 2
 ```
 
-注意：`git revert` 不会删除旧提交，而是创建一个新提交来"反向操作"。历史记录是完整的。
+注意：`git revert` 不会删除旧提交，而是创建一个新提交来"反向操作"。历史记录是完整的，这对团队协作很重要。
 
-#### 场景5：找回"丢失"的提交（reflog）
+### 场景5：找回"丢失"的提交（reflog）
 
-**情况**：你不小心用 `git reset --hard` 删除了提交，想要找回来。
-
-**命令**：`git reflog`
+你不小心用 `git reset --hard` 删除了提交，想要找回来。别慌，Git 有个"回收站"叫 `reflog`。
 
 `reflog` 记录了你的 HEAD 指针的所有移动历史，即使提交被"删除"了，也能在 reflog 中找到。
+
+```bash
+$ git reflog
+```
 
 **示例**：
 
@@ -688,8 +486,6 @@ $ git reset --hard HEAD~2
 
 # 2. 查看 reflog
 $ git reflog
-
-# 输出：
 def5678 HEAD@{0}: reset: moving to HEAD~2
 abc1234 HEAD@{1}: commit: docs: add chapter 3
 xyz9012 HEAD@{2}: commit: docs: add chapter 2
@@ -705,62 +501,6 @@ $ git reset --hard HEAD@{1}
 
 **注意**：reflog 只保留最近几个月的记录（默认90天），所以不要指望它能找回很久以前的提交。
 
-### 实战演练：撤销错误的提交
-
-#### 实战1：撤销工作区的修改
-
-**场景**：你正在写文档，不小心删除了一大段内容，还没有 add，想要恢复。
-
-```bash
-# 1. 不小心删除了内容
-$ echo "" > important-file.md
-
-# 2. 发现错误，立即撤销
-$ git restore important-file.md
-
-# 3. 验证文件已恢复
-$ cat important-file.md
-```
-
-#### 实战2：撤销已经 add 但还没 commit 的修改
-
-**场景**：你修改了多个文件并 add 了，但发现其中一个文件不应该提交。
-
-```bash
-# 1. 修改并添加多个文件
-$ git add file1.md file2.md file3.md
-
-# 2. 发现 file3.md 不应该提交
-$ git restore --staged file3.md
-
-# 3. 只提交 file1 和 file2
-$ git commit -m "docs: update file1 and file2"
-```
-
-#### 实战3：撤销最近一次提交（还没 push）
-
-**场景**：你提交了一个文件，但提交信息写错了。
-
-```bash
-# 1. 撤销提交，但保留修改
-$ git reset --soft HEAD~1
-
-# 2. 重新提交，使用正确的提交信息
-$ git commit -m "docs: correct commit message"
-```
-
-#### 实战4：撤销已经 push 的提交
-
-**场景**：你发现已经推送的提交有错误，需要撤销。
-
-```bash
-# 1. 使用 revert 创建撤销提交
-$ git revert abc1234
-
-# 2. 推送撤销提交
-$ git push origin main
-```
-
 ### 安全撤销的原则
 
 #### 原则1：push 前可以用 reset，push 后只能用 revert
@@ -770,7 +510,7 @@ $ git push origin main
 
 #### 原则2：使用 `--hard` 前请三思
 
-`git reset --hard` 会永久删除你的修改，使用前请确认：
+`git reset --hard` 会永久删除你的修改。使用前请确认：
 - 你真的不需要这些修改了吗？
 - 有没有备份？
 - 能不能用 `--soft` 或 `--mixed` 代替？
@@ -796,27 +536,27 @@ $ git checkout backup-before-reset
 
 ## 常见问题与解决
 
-### 问题1：我不小心用 `git reset --hard` 删除了重要提交，怎么办？
+**问题1：我不小心用 `git reset --hard` 删除了重要提交，怎么办？**
 
-**解决**：用 `git reflog` 找回。
+用 `git reflog` 找回：
 
 ```bash
 $ git reflog
 $ git reset --hard <提交ID>
 ```
 
-### 问题2：我想撤销多次提交，应该怎么做？
+**问题2：我想撤销多次提交，应该怎么做？**
 
-**解决**：用 `git reset HEAD~N`，N 是你想撤销的提交数量。
+用 `git reset HEAD~N`，N 是你想撤销的提交数量：
 
 ```bash
 # 撤销最近3次提交
 $ git reset HEAD~3
 ```
 
-### 问题3：`git revert` 时出现冲突，怎么办？
+**问题3：`git revert` 时出现冲突，怎么办？**
 
-**解决**：手动解决冲突，然后继续 revert。
+手动解决冲突，然后继续 revert：
 
 ```bash
 # 1. 解决冲突（编辑文件）
@@ -826,17 +566,16 @@ $ git add <文件名>
 $ git revert --continue
 ```
 
-### 问题4：我想撤销某个文件的修改，但保留其他文件，怎么做？
+**问题4：我想撤销某个文件的修改，但保留其他文件，怎么做？**
 
-**解决**：用 `git restore` 指定文件。
+用 `git restore` 指定文件：
 
 ```bash
 $ git restore <文件名>
 ```
 
-### 问题5：`git restore` 和 `git reset` 有什么区别？
+**问题5：`git restore` 和 `git reset` 有什么区别？**
 
-**解决**：
 - `git restore`：用于撤销工作区或暂存区的修改，不影响提交历史
 - `git reset`：用于移动 HEAD 指针，改变提交历史
 
@@ -846,47 +585,40 @@ $ git restore <文件名>
 
 ## 本章小结
 
-在这一章，我们学习了 Git 的"时间旅行"能力：
+这一章我们学习了 Git 的"时间旅行"能力：
 
-1. **查看历史**：
-   - `git log`：查看提交历史
-   - `git log --oneline`：简洁视图
-   - `git log --graph`：可视化分支
-   - `git log -p`：查看详细改动
-   - `git show`：查看单个提交
+**查看历史**：
+- `git log` 查看提交历史
+- `--oneline` 简化输出
+- `--graph` 可视化分支
+- `-p` 查看详细改动
+- `--grep` 搜索提交信息
+- `--author` 按作者过滤
+- `git show` 查看单个提交
 
-2. **比较差异**：
-   - `git diff`：工作区 vs 暂存区
-   - `git diff --staged`：暂存区 vs 最新提交
-   - `git diff <commit1> <commit2>`：比较两个提交
+**比较差异**：
+- `git diff` 工作区 vs 暂存区
+- `git diff --staged` 暂存区 vs 最新提交
+- `git diff <commit1> <commit2>` 比较两个提交
 
-3. **撤销操作**：
-   - `git restore`：撤销工作区或暂存区的修改
-   - `git reset --soft`：撤销提交，保留暂存区和工作区
-   - `git reset --mixed`：撤销提交，保留工作区
-   - `git reset --hard`：撤销提交，丢弃所有修改
-   - `git revert`：创建新提交来撤销（用于已 push 的提交）
-   - `git reflog`：找回"丢失"的提交
+**撤销操作**：
+- `git restore` 撤销工作区或暂存区的修改
+- `git reset --soft` 撤销提交，保留暂存区和工作区
+- `git reset --mixed` 撤销提交，保留工作区
+- `git reset --hard` 撤销提交，丢弃所有修改
+- `git revert` 创建新提交来撤销（用于已 push 的提交）
+- `git reflog` 找回"丢失"的提交
 
-4. **安全原则**：
-   - push 前可以用 reset，push 后只能用 revert
-   - 使用 `--hard` 前请三思
-   - 重要操作前先创建备份分支
-   - 记住 reflog 是最后的救命稻草
+**安全原则**：
+- push 前可以用 reset，push 后只能用 revert
+- 使用 `--hard` 前请三思
+- 重要操作前先创建备份分支
+- 记住 reflog 是最后的救命稻草
 
 ## 下一步
 
-现在你已经掌握了 Git 的基本操作：初始化、提交、查看历史、比较差异、撤销修改。
+现在你已经掌握了 Git 的基本操作：初始化、提交、查看历史、比较差异、撤销修改。但到目前为止，我们都是在一条直线上工作——每次提交都是在上一次提交的基础上继续。
 
-但到目前为止，我们都是在一条直线上工作——每次提交都是在上一次提交的基础上继续。
+在下一章，我们会学习 Git 最强大的功能之一：**分支**。分支让你可以同时进行多个"平行宇宙"的开发：在一个分支上开发新功能，在另一个分支上修复 bug，在第三个分支上做实验。而且这些分支之间互不干扰，最后还能合并到一起。
 
-在下一章，我们会学习 Git 最强大的功能之一：**分支**。
-
-分支让你可以同时进行多个"平行宇宙"的开发：
-- 在一个分支上开发新功能
-- 在另一个分支上修复 bug
-- 在第三个分支上做实验
-
-而且这些分支之间互不干扰，最后还能合并到一起。
-
-这听起来很神奇，对吧？让我们在第四章揭开分支的秘密。
+让我们在第四章揭开分支的秘密。
