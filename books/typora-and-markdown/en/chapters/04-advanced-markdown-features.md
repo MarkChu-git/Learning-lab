@@ -15,12 +15,7 @@
 
 In previous chapters, we learned Markdown's basic syntax: headings, paragraphs, lists, links, images, code blocks, etc. These basic syntax elements are sufficient for writing clear documents.
 
-However, when starting to write more professional content, you'll find basic syntax somewhat inadequate:
-
-- **Writing technical documentation**: Need to display complex data comparisons, basic tables aren't enough
-- **Project planning**: Need to draw flowcharts and sequence diagrams to explain system architecture
-- **Study notes**: Need to write mathematical formulas and chemical equations
-- **Task management**: Need to manage to-do items directly in documents
+However, when starting to write more professional content, you'll find basic syntax somewhat inadequate. Writing technical documentation requires displaying complex data comparisons, and basic tables aren't enough. Project planning needs flowcharts and sequence diagrams to explain system architecture. Study notes require mathematical formulas and chemical equations. Task management needs to handle to-do items directly in documents.
 
 This is why we need to learn Markdown's advanced features—they make documents more professional, more practical, and more powerful.
 
@@ -62,12 +57,12 @@ Result:
 | Content 1  | Content 2    | Content 3   |
 | Content 4  | Content 5    | Content 6   |
 
-**Alignment rules**:
+Alignment rules:
 - `:-----` Left align (default)
 - `:----:` Center align
 - `-----:` Right align
 
-**Usage suggestions**:
+Usage suggestions:
 - Text content: Left align
 - Numbers, prices: Right align
 - Titles, status: Center align
@@ -76,17 +71,17 @@ Result:
 
 Typora provides convenient table editing features:
 
-1. **Create table**:
+1. Create table:
    - Type `| Column 1 | Column 2 |` then press Enter
    - Or use shortcut: `Ctrl/Cmd + T`
 
-2. **Edit table**:
+2. Edit table:
    - Click cell to edit directly
    - `Tab` key: Move to next cell
    - `Shift + Tab`: Move to previous cell
    - `Enter`: Insert new row below current row
 
-3. **Adjust table**:
+3. Adjust table:
    - Right-click table → Select "Table" menu
    - Can insert/delete rows and columns
    - Can set alignment
@@ -98,7 +93,7 @@ Table cells can use most Markdown formatting:
 ```markdown
 | Feature | Syntax | Example |
 |---------|--------|---------|
-| **Bold** | `**text**` | **Important** |
+| **Bold** | `**text**` | Important |
 | *Italic* | `*text*` | *Emphasis* |
 | `Code` | `` `code` `` | `git commit` |
 | [Link](url) | `[text](url)` | [GitHub](https://github.com) |
@@ -108,7 +103,7 @@ Result:
 
 | Feature | Syntax | Example |
 |---------|--------|---------|
-| **Bold** | `**text**` | **Important** |
+| **Bold** | `**text**` | Important |
 | *Italic* | `*text*` | *Emphasis* |
 | `Code` | `` `code` `` | `git commit` |
 | [Link](url) | `[text](url)` | [GitHub](https://github.com) |
@@ -144,10 +139,10 @@ If a table is too large, consider splitting it into multiple smaller tables, eac
 ```markdown
 | Feature | Typora | VS Code | Obsidian |
 |:--------|:------:|:-------:|:--------:|
-| Live Preview | ✅ | ❌ | ✅ |
-| Syntax Highlighting | ✅ | ✅ | ✅ |
-| Image Management | ✅ | ⚠️ | ✅ |
-| Export PDF | ✅ | ⚠️ | ⚠️ |
+| Live Preview | Yes | No | Yes |
+| Syntax Highlighting | Yes | Yes | Yes |
+| Image Management | Yes | Partial | Yes |
+| Export PDF | Yes | Partial | Partial |
 | Price | $14.99 | Free | Free |
 | Best For | Writing | Coding | Notes |
 ```
@@ -156,17 +151,13 @@ Result:
 
 | Feature | Typora | VS Code | Obsidian |
 |:--------|:------:|:-------:|:--------:|
-| Live Preview | ✅ | ❌ | ✅ |
-| Syntax Highlighting | ✅ | ✅ | ✅ |
-| Image Management | ✅ | ⚠️ | ✅ |
-| Export PDF | ✅ | ⚠️ | ⚠️ |
+| Live Preview | Yes | No | Yes |
+| Syntax Highlighting | Yes | Yes | Yes |
+| Image Management | Yes | Partial | Yes |
+| Export PDF | Yes | Partial | Partial |
 | Price | $14.99 | Free | Free |
 | Best For | Writing | Coding | Notes |
 
-**Tips**:
-- ✅ means "Supported"
-- ❌ means "Not supported"
-- ⚠️ means "Partially supported" or "Requires plugin"
 
 ## Task Lists: Managing To-Do Items
 
@@ -188,7 +179,7 @@ Result:
 - [x] Completed task
 - [ ] Another incomplete task
 
-**Note**:
+Note:
 - `[ ]` has a space in the middle, indicates incomplete
 - `[x]` or `[X]` indicates completed
 - Must be used after list items (`-` or `*`)
@@ -260,7 +251,7 @@ Result:
 - [ ] Format unification
 ```
 
-**Advantages**:
+Advantages:
 - Intuitive: See progress at a glance
 - Flexible: Add and modify tasks anytime
 - Version control: Use with Git to track task changes
@@ -271,7 +262,7 @@ Result:
 
 Mermaid is a tool for describing diagrams with text. Just write a few lines of code to generate flowcharts, sequence diagrams, Gantt charts, and various other diagrams.
 
-**Why use Mermaid?**
+Why use Mermaid?
 - No need for specialized drawing software
 - Diagrams and documents in the same file
 - Easy version control (plain text)
@@ -447,7 +438,7 @@ Typora natively supports Mermaid:
 3. Typora will automatically render it as a diagram
 4. Click diagram to edit code
 
-**Tip**: If diagram doesn't display, check:
+Tip: If diagram doesn't display, check:
 - Is code block language set to `mermaid`
 - Is Mermaid syntax correct
 - Does Typora version support it (recommend using latest version)
@@ -637,7 +628,7 @@ Can contain any Markdown content:
 
 </details>
 
-**Use cases**:
+Use cases:
 - FAQ (Frequently Asked Questions)
 - Long supplementary explanations
 - Optional reading content
@@ -684,7 +675,7 @@ This is normal text, <mark>this part is highlighted</mark>.
 
 ### Note: Compatibility Issues
 
-**Important**: Not all platforms support all HTML tags.
+Important: Not all platforms support all HTML tags.
 
 - **Typora**: Supports most HTML tags
 - **GitHub**: Supports some HTML tags (for security reasons)
@@ -703,32 +694,32 @@ This is normal text, <mark>this part is highlighted</mark>.
 
 GitHub uses GitHub Flavored Markdown (GFM), which supports:
 
-**Supported features**:
-- ✅ Basic Markdown syntax
-- ✅ Tables
-- ✅ Task lists
-- ✅ Strikethrough (`~~text~~`)
-- ✅ Auto-linking (directly writing URL will auto-convert to link)
-- ✅ Emoji (`:smile:` → 😄)
-- ✅ Some HTML tags
+Supported features:
+- Basic Markdown syntax
+- Tables
+- Task lists
+- Strikethrough (`~~text~~`)
+- Auto-linking (directly writing URL will auto-convert to link)
+- Emoji (``:smile:`` → smile emoji)
+- Some HTML tags
 
 **Unsupported or limited support features**:
-- ❌ Mermaid diagrams (GitHub recently started supporting, but rendering may differ)
-- ❌ Mathematical formulas (need to use images or other methods)
-- ❌ Most HTML tags (for security reasons)
-- ❌ Custom CSS
+- Mermaid diagrams (GitHub recently started supporting, but rendering may differ)
+- Mathematical formulas (need to use images or other methods)
+- Most HTML tags (for security reasons)
+- Custom CSS
 
 ### Typora vs GitHub Differences
 
 | Feature | Typora | GitHub |
 |---------|--------|--------|
-| Basic syntax | ✅ | ✅ |
-| Tables | ✅ | ✅ |
-| Task lists | ✅ | ✅ |
-| Mermaid | ✅ | ⚠️ |
-| Math formulas | ✅ | ❌ |
-| HTML | ✅ | ⚠️ |
-| Custom themes | ✅ | ❌ |
+| Basic syntax | Yes | Yes |
+| Tables | Yes | Yes |
+| Task lists | Yes | Yes |
+| Mermaid | Yes | Partial |
+| Math formulas | Yes | No |
+| HTML | Yes | Partial |
+| Custom themes | Yes | No |
 
 ### How to Write Documents with Good Compatibility
 
@@ -798,41 +789,19 @@ $$E = mc^2$$
 
 ## Chapter Summary
 
-In this chapter, we learned Markdown's advanced features:
+In this chapter, we learned Markdown's advanced features.
 
-1. **Advanced tables**:
-   - Alignment (left align, center, right align)
-   - Quick table editing in Typora
-   - Using formatting in tables
-   - Organization tips for complex tables
+For advanced tables, we learned alignment (left, center, right), how to quickly edit tables in Typora, how to use formatting in tables, and organization tips for complex tables.
 
-2. **Task lists**:
-   - Syntax: `- [ ]` and `- [x]`
-   - Click to toggle status in Typora
-   - Nested task lists
-   - Managing project tasks with Markdown
+For task lists, we learned the syntax `- [ ]` and `- [x]`, how to click to toggle status in Typora, how to create nested task lists, and how to manage project tasks with Markdown.
 
-3. **Mermaid diagrams**:
-   - Flowcharts: Show processes and decisions
-   - Sequence diagrams: Show object interactions
-   - Gantt charts: Show project timelines
-   - Class diagrams: Show object-oriented design
+For Mermaid diagrams, we learned flowcharts (showing processes and decisions), sequence diagrams (showing object interactions), Gantt charts (showing project timelines), and class diagrams (showing object-oriented design).
 
-4. **Advanced mathematical formulas**:
-   - Common mathematical symbols
-   - Matrices and equation systems
-   - Chemical formulas (mhchem)
+For advanced mathematical formulas, we learned common mathematical symbols, matrices and equation systems, and chemical formulas (mhchem).
 
-5. **HTML embedding**:
-   - `<details>` and `<summary>`: Collapsible content
-   - `<kbd>`: Keyboard keys
-   - `<mark>`: Highlighted text
-   - Embedded video and audio
+For HTML embedding, we learned `<details>` and `<summary>` (collapsible content), `<kbd>` (keyboard keys), `<mark>` (highlighted text), and how to embed video and audio.
 
-6. **Platform compatibility**:
-   - Features GitHub supports and doesn't support
-   - Typora vs GitHub differences
-   - How to write documents with good compatibility
+For platform compatibility, we learned features GitHub supports and doesn't support, Typora vs GitHub differences, and how to write documents with good compatibility.
 
 ## Next Steps
 
