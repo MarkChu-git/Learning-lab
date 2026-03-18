@@ -24,20 +24,22 @@ To fix two issues — slow beginner onboarding and overly thin English pages —
 
 Entry points:
 
-- [Volume introduction](books/typora-and-markdown/README.en.md)
-- [Chapter 0: Practical Quick Start](books/typora-and-markdown/chapters/00-practical-quickstart.en.md) ([中文](books/typora-and-markdown/chapters/00-practical-quickstart.md))
-- [Chapter 1](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md) ([中文](books/typora-and-markdown/chapters/01-typora-and-markdown.md))
-- [Chapter 2](books/typora-and-markdown/chapters/02-structure-images-and-paths.en.md) ([中文](books/typora-and-markdown/chapters/02-structure-images-and-paths.md))
-- [Chapter 3](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.en.md) ([中文](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.md))
+- [Volume introduction](books/typora-and-markdown/en/README.md) ([中文](books/typora-and-markdown/zh/README.md))
+- [Chapter 0: Practical Quick Start](books/typora-and-markdown/en/chapters/00-practical-quickstart.md) ([中文](books/typora-and-markdown/zh/chapters/00-practical-quickstart.md))
+- [Chapter 1: Typora and Markdown](books/typora-and-markdown/en/chapters/01-typora-and-markdown.md) ([中文](books/typora-and-markdown/zh/chapters/01-typora-and-markdown.md))
+- [Chapter 2: Structure, Images, and Paths](books/typora-and-markdown/en/chapters/02-structure-images-and-paths.md) ([中文](books/typora-and-markdown/zh/chapters/02-structure-images-and-paths.md))
+- [Chapter 3: Markdown, LaTeX, and Typora Settings](books/typora-and-markdown/en/chapters/03-markdown-latex-and-typora-settings.md) ([中文](books/typora-and-markdown/zh/chapters/03-markdown-latex-and-typora-settings.md))
+- [Chapter 4: Advanced Features — Tables, Task Lists, Diagrams, and Extensions](books/typora-and-markdown/en/chapters/04-advanced-markdown-features.md) ([中文](books/typora-and-markdown/zh/chapters/04-advanced-markdown-features.md))
 
 ### 2) Git and GitHub
 
 Entry points:
 
-- [Volume introduction](books/git-and-github/README.en.md)
-- [Chapter 0: Practical Quick Start](books/git-and-github/chapters/00-practical-quickstart.en.md) ([中文](books/git-and-github/chapters/00-practical-quickstart.md))
-- [Chapter 1](books/git-and-github/chapters/01-why-version-control-matters.en.md) ([中文](books/git-and-github/chapters/01-why-version-control-matters.md))
-- [Chapter 2](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.en.md) ([中文](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.md))
+- [Volume introduction](books/git-and-github/en/README.md) ([中文](books/git-and-github/zh/README.md))
+- [Chapter 0: Practical Quick Start](books/git-and-github/en/chapters/00-practical-quickstart.md) ([中文](books/git-and-github/zh/chapters/00-practical-quickstart.md))
+- [Chapter 1: Why Version Control Matters](books/git-and-github/en/chapters/01-why-version-control-matters.md) ([中文](books/git-and-github/zh/chapters/01-why-version-control-matters.md))
+- [Chapter 2: Working Tree, Staging Area, and First Commit](books/git-and-github/en/chapters/02-working-tree-staging-and-first-commit.md) ([中文](books/git-and-github/zh/chapters/02-working-tree-staging-and-first-commit.md))
+- [Chapter 3: Looking Back and Undoing — View History, Compare Differences, and Safely Undo](books/git-and-github/en/chapters/03-viewing-history-diff-and-undo.md) ([中文](books/git-and-github/zh/chapters/03-viewing-history-diff-and-undo.md))
 
 ## Recommended reading paths
 

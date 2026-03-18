@@ -20,11 +20,12 @@ Core scope:
 
 Current entry points:
 
-- [Volume introduction](books/typora-and-markdown/README.en.md)
-- [Chapter 0: Practical Quick Start — Get Typora, Markdown, and LaTeX Working Fast](books/typora-and-markdown/chapters/00-practical-quickstart.en.md) ([中文](books/typora-and-markdown/chapters/00-practical-quickstart.md))
-- [Chapter 1: Use Typora and Markdown as a Real Writing Method](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md) ([中文](books/typora-and-markdown/chapters/01-typora-and-markdown.md))
-- [Chapter 2: Build Documents That Survive Long-Term Maintenance](books/typora-and-markdown/chapters/02-structure-images-and-paths.en.md) ([中文](books/typora-and-markdown/chapters/02-structure-images-and-paths.md))
-- [Chapter 3: Markdown Basics, LaTeX Formula Syntax, and Typora Settings](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.en.md) ([中文](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.md))
+- [Volume introduction](books/typora-and-markdown/en/README.md) ([中文](books/typora-and-markdown/zh/README.md))
+- [Chapter 0: Practical Quick Start — Get Typora, Markdown, and LaTeX Working Fast](books/typora-and-markdown/en/chapters/00-practical-quickstart.md) ([中文](books/typora-and-markdown/zh/chapters/00-practical-quickstart.md))
+- [Chapter 1: Use Typora and Markdown as a Real Writing Method](books/typora-and-markdown/en/chapters/01-typora-and-markdown.md) ([中文](books/typora-and-markdown/zh/chapters/01-typora-and-markdown.md))
+- [Chapter 2: Build Documents That Survive Long-Term Maintenance](books/typora-and-markdown/en/chapters/02-structure-images-and-paths.md) ([中文](books/typora-and-markdown/zh/chapters/02-structure-images-and-paths.md))
+- [Chapter 3: Markdown Basics, LaTeX Formula Syntax, and Typora Settings](books/typora-and-markdown/en/chapters/03-markdown-latex-and-typora-settings.md) ([中文](books/typora-and-markdown/zh/chapters/03-markdown-latex-and-typora-settings.md))
+- [Chapter 4: Beyond Basic Syntax — Tables, Task Lists, Diagrams, and Extended Features](books/typora-and-markdown/en/chapters/04-advanced-markdown-features.md) ([中文](books/typora-and-markdown/zh/chapters/04-advanced-markdown-features.md))
 - [Research source map](books/typora-and-markdown/research/source-map.md)
 
 ### A2. Git and GitHub
@@ -41,10 +42,11 @@ Core scope:
 
 Current entry points:
 
-- [Volume introduction](books/git-and-github/README.en.md)
-- [Chapter 0: Practical Quick Start — Get Git and GitHub Working Fast](books/git-and-github/chapters/00-practical-quickstart.en.md) ([中文](books/git-and-github/chapters/00-practical-quickstart.md))
-- [Chapter 1: What Version Control Is Actually Solving](books/git-and-github/chapters/01-why-version-control-matters.en.md) ([中文](books/git-and-github/chapters/01-why-version-control-matters.md))
-- [Chapter 2: Start Using Git for Real — Working Tree, Staging Area, and Your First Reliable Commit](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.en.md) ([中文](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.md))
+- [Volume introduction](books/git-and-github/en/README.md) ([中文](books/git-and-github/zh/README.md))
+- [Chapter 0: Practical Quick Start — Get Git and GitHub Working Fast](books/git-and-github/en/chapters/00-practical-quickstart.md) ([中文](books/git-and-github/zh/chapters/00-practical-quickstart.md))
+- [Chapter 1: What Version Control Is Actually Solving](books/git-and-github/en/chapters/01-why-version-control-matters.md) ([中文](books/git-and-github/zh/chapters/01-why-version-control-matters.md))
+- [Chapter 2: Start Using Git for Real — Working Tree, Staging Area, and Your First Reliable Commit](books/git-and-github/en/chapters/02-working-tree-staging-and-first-commit.md) ([中文](books/git-and-github/zh/chapters/02-working-tree-staging-and-first-commit.md))
+- [Chapter 3: Looking Back and Undoing — How to View History, Compare Differences, and Safely Undo](books/git-and-github/en/chapters/03-viewing-history-diff-and-undo.md) ([中文](books/git-and-github/zh/chapters/03-viewing-history-diff-and-undo.md))
 - [Research source map](books/git-and-github/research/source-map.md)
 
 ## B. Planned volumes

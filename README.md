@@ -23,20 +23,22 @@
 
 入口：
 
-- [分册说明](books/typora-and-markdown/README.md)
-- [第零章：新手快学版](books/typora-and-markdown/chapters/00-practical-quickstart.md) ([English](books/typora-and-markdown/chapters/00-practical-quickstart.en.md))
-- [第一章](books/typora-and-markdown/chapters/01-typora-and-markdown.md) ([English](books/typora-and-markdown/chapters/01-typora-and-markdown.en.md))
-- [第二章](books/typora-and-markdown/chapters/02-structure-images-and-paths.md) ([English](books/typora-and-markdown/chapters/02-structure-images-and-paths.en.md))
-- [第三章](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.md) ([English](books/typora-and-markdown/chapters/03-markdown-latex-and-typora-settings.en.md))
+- [分册说明](books/typora-and-markdown/zh/README.md) ([English](books/typora-and-markdown/en/README.md))
+- [第零章：新手快学版](books/typora-and-markdown/zh/chapters/00-practical-quickstart.md) ([English](books/typora-and-markdown/en/chapters/00-practical-quickstart.md))
+- [第一章：Typora 与 Markdown](books/typora-and-markdown/zh/chapters/01-typora-and-markdown.md) ([English](books/typora-and-markdown/en/chapters/01-typora-and-markdown.md))
+- [第二章：目录结构、图片与路径](books/typora-and-markdown/zh/chapters/02-structure-images-and-paths.md) ([English](books/typora-and-markdown/en/chapters/02-structure-images-and-paths.md))
+- [第三章：Markdown、LaTeX 与 Typora 设置](books/typora-and-markdown/zh/chapters/03-markdown-latex-and-typora-settings.md) ([English](books/typora-and-markdown/en/chapters/03-markdown-latex-and-typora-settings.md))
+- [第四章：高级特性——表格、任务列表、图表与扩展](books/typora-and-markdown/zh/chapters/04-advanced-markdown-features.md) ([English](books/typora-and-markdown/en/chapters/04-advanced-markdown-features.md))
 
 ### 2) Git 与 GitHub
 
 入口：
 
-- [分册说明](books/git-and-github/README.md)
-- [第零章：新手快学版](books/git-and-github/chapters/00-practical-quickstart.md) ([English](books/git-and-github/chapters/00-practical-quickstart.en.md))
-- [第一章](books/git-and-github/chapters/01-why-version-control-matters.md) ([English](books/git-and-github/chapters/01-why-version-control-matters.en.md))
-- [第二章](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.md) ([English](books/git-and-github/chapters/02-working-tree-staging-and-first-commit.en.md))
+- [分册说明](books/git-and-github/zh/README.md) ([English](books/git-and-github/en/README.md))
+- [第零章：新手快学版](books/git-and-github/zh/chapters/00-practical-quickstart.md) ([English](books/git-and-github/en/chapters/00-practical-quickstart.md))
+- [第一章：为什么需要版本控制](books/git-and-github/zh/chapters/01-why-version-control-matters.md) ([English](books/git-and-github/en/chapters/01-why-version-control-matters.md))
+- [第二章：工作区、暂存区与第一次提交](books/git-and-github/zh/chapters/02-working-tree-staging-and-first-commit.md) ([English](books/git-and-github/en/chapters/02-working-tree-staging-and-first-commit.md))
+- [第三章：回看与回退——查看历史、比较差异并安全撤销](books/git-and-github/zh/chapters/03-viewing-history-diff-and-undo.md) ([English](books/git-and-github/en/chapters/03-viewing-history-diff-and-undo.md))
 
 ## 推荐阅读路径
 
