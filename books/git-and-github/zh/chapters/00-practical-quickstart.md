@@ -222,12 +222,16 @@ git push -u origin main
 | `git commit -m "..."` | 提交变化 | 一个小阶段完成后 |
 | `git log --oneline` | 看简短历史 | 想回看最近做了什么 |
 | `git diff` | 看具体差异 | 提交前检查 |
+| `git diff --staged` | 看暂存区差异 | 提交前最后确认 |
+| `git show <commit>` | 看某次提交详情 | 追踪具体改动 |
+| `git restore <file>` | 撤销工作区修改 | 改错了想恢复 |
+| `git restore --staged <file>` | 取消暂存 | add 错了想撤回 |
 | `git pull` | 拉远程最新内容 | 开工前 |
 | `git push` | 把本地提交推上去 | 收工前 |
 | `git branch` | 看分支 | 开始接触分支时 |
 | `git checkout -b new-branch` | 新建并切换分支 | 做新功能或大改动时 |
 
-如果你是新手，前 7 个优先级最高。
+如果你是新手，前 9 个优先级最高。
 
 ---
 

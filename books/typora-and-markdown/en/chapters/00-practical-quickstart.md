@@ -624,4 +624,6 @@ After this chapter, continue like this:
 1. Read Chapter 1 for the long-term writing mindset behind Typora and Markdown.
 2. Read Chapter 2 to stabilize folders, images, and relative paths.
 3. Read Chapter 3 for a fuller treatment of Markdown, LaTeX, and Typora settings.
+4. Read Chapter 4 to learn advanced features like table alignment, task lists, and Mermaid diagrams.
+5. Then move to the quick-start chapter in **Git and GitHub** so that your writing workflow and version control start working together.
 4. Then move to the quick-start chapter in **Git and GitHub** so that your writing workflow and version control start working together.

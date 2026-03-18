@@ -602,4 +602,5 @@ git commit -m "docs: add first practice note"
 1. 回去读第一章，建立 Typora 和 Markdown 的长期写作观。
 2. 再读第二章，把目录、图片、相对路径这些结构问题彻底搞稳。
 3. 再读第三章，补齐 Markdown、LaTeX 和 Typora 设置的系统解释。
-4. 然后切到《Git 与 GitHub》的快学章，把文档工作流和版本控制连起来。
+4. 再读第四章，学习表格对齐、任务列表、Mermaid 图表等高级特性。
+5. 然后切到《Git 与 GitHub》的快学章，把文档工作流和版本控制连起来。

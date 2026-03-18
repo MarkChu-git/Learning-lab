@@ -220,12 +220,16 @@ These are the commands most worth mastering early.
 | `git commit -m "..."` | record a change set | after a small milestone |
 | `git log --oneline` | review short history | to see recent work |
 | `git diff` | inspect exact changes | before committing |
+| `git diff --staged` | inspect staged changes | final check before commit |
+| `git show <commit>` | view specific commit details | tracking specific changes |
+| `git restore <file>` | undo working directory changes | made a mistake, want to revert |
+| `git restore --staged <file>` | unstage changes | added wrong file, want to undo |
 | `git pull` | get latest remote content | before starting work |
 | `git push` | send local commits upstream | before stopping |
 | `git branch` | list branches | when starting to learn branches |
 | `git checkout -b new-branch` | create and switch branch | for new features or larger edits |
 
-If you are a beginner, the first seven matter most.
+If you are a beginner, the first nine matter most.
 
 ---
 
