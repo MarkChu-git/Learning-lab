@@ -418,16 +418,25 @@ Make the local loop stable first. Then platform collaboration becomes much easie
 
 ## 13. Ten very common beginner mistakes
 
-1. memorizing commands without understanding their function,
-2. committing only after huge piles of changes,
-3. writing meaningless commit messages,
-4. not pulling before starting,
-5. forgetting to push before stopping,
-6. operating blindly without checking `status`,
-7. mixing Git and GitHub together,
-8. trying to learn advanced `rebase` / `cherry-pick` / `reset` patterns too early,
-9. being afraid of branches and doing every large experiment on main,
-10. treating commits like filename-based “final version markers” instead of change history.
+### Mistake 1: memorizing commands without understanding their function
+
+### Mistake 2: committing only after huge piles of changes
+
+### Mistake 3: writing meaningless commit messages
+
+### Mistake 4: not pulling before starting
+
+### Mistake 5: forgetting to push before stopping
+
+### Mistake 6: operating blindly without checking `status`
+
+### Mistake 7: mixing Git and GitHub together
+
+### Mistake 8: trying to learn advanced rebase / cherry-pick / reset patterns too early
+
+### Mistake 9: being afraid of branches and doing every large experiment on main
+
+### Mistake 10: treating commits like “final version markers” instead of change history
 
 ---
 
