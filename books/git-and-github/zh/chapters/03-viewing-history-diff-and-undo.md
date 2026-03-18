@@ -494,17 +494,11 @@ reflog 只保留最近几个月的记录（默认90天），所以不要指望�
 
 ### 安全撤销的原则
 
-#### 原则1：push 前可以用 reset，push 后只能用 revert
+push 前可以用 reset，push 后只能用 revert。还没 push 时，可以用 `git reset` 改写历史。已经 push 后，必须用 `git revert` 创建新提交。
 
-还没 push 时，可以用 `git reset` 改写历史。已经 push 后，必须用 `git revert` 创建新提交。
+使用 `--hard` 前请三思。`git reset --hard` 会永久删除修改。使用前请确认：真的不需要这些修改了吗？有没有备份？能不能用 `--soft` 或 `--mixed` 代替？
 
-#### 原则2：使用 `--hard` 前请三思
-
-`git reset --hard` 会永久删除修改。使用前请确认：真的不需要这些修改了吗？有没有备份？能不能用 `--soft` 或 `--mixed` 代替？
-
-#### 原则3：重要操作前先创建分支
-
-如果要做一个可能有风险的操作，先创建一个分支作为备份：
+重要操作前先创建分支。如果要做一个可能有风险的操作，先创建一个分支作为备份：
 
 ```bash
 $ git branch backup-before-reset
@@ -517,13 +511,11 @@ $ git reset --hard HEAD~5
 $ git checkout backup-before-reset
 ```
 
-#### 原则4：记住 reflog 是最后的救命稻草
-
-如果真的搞砸了，记得用 `git reflog` 找回"丢失"的提交。
+记住 reflog 是最后的救命稻草。如果真的搞砸了，记得用 `git reflog` 找回"丢失"的提交。
 
 ## 常见问题与解决
 
-问题1：我不小心用 `git reset --hard` 删除了重要提交，怎么办？
+**问题1：我不小心用 `git reset --hard` 删除了重要提交，怎么办？**
 
 用 `git reflog` 找回：
 
@@ -532,7 +524,7 @@ $ git reflog
 $ git reset --hard <提交ID>
 ```
 
-问题2：我想撤销多次提交，应该怎么做？
+**问题2：我想撤销多次提交，应该怎么做？**
 
 用 `git reset HEAD~N`，N 是你想撤销的提交数量：
 
@@ -541,7 +533,7 @@ $ git reset --hard <提交ID>
 $ git reset HEAD~3
 ```
 
-问题3：`git revert` 时出现冲突，怎么办？
+**问题3：`git revert` 时出现冲突，怎么办？**
 
 手动解决冲突，然后继续 revert：
 
@@ -553,7 +545,7 @@ $ git add <文件名>
 $ git revert --continue
 ```
 
-问题4：我想撤销某个文件的修改，但保留其他文件，怎么做？
+**问题4：我想撤销某个文件的修改，但保留其他文件，怎么做？**
 
 用 `git restore` 指定文件：
 
@@ -561,14 +553,9 @@ $ git revert --continue
 $ git restore <文件名>
 ```
 
-问题5：`git restore` 和 `git reset` 有什么区别？
+**问题5：`git restore` 和 `git reset` 有什么区别？**
 
-- `git restore`：用于撤销工作区或暂存区的修改，不影响提交历史
-- `git reset`：用于移动 HEAD 指针，改变提交历史
-
-简单记忆：
-- 还没 commit → 用 `git restore`
-- 已经 commit → 用 `git reset` 或 `git revert`
+`git restore` 用于撤销工作区或暂存区的修改，不影响提交历史。`git reset` 用于移动 HEAD 指针，改变提交历史。简单记忆：还没 commit 用 `git restore`，已经 commit 用 `git reset` 或 `git revert`。
 
 ## 本章小结
 
@@ -580,7 +567,7 @@ $ git restore <文件名>
 
 撤销操作有多种方式：`git restore` 用于撤销工作区或暂存区的修改；`git reset` 有三种模式，`--soft` 只撤销提交但保留暂存区和工作区，`--mixed` 撤销提交和暂存区但保留工作区，`--hard` 则丢弃所有修改；对于已经 push 的提交，要用 `git revert` 创建新提交来撤销；如果不小心删除了提交，可以用 `git reflog` 找回。
 
-安全原则要记住：push 前可以用 reset，push 后只能用 revert；使用 `--hard` 前请三思；重要操作前先创建备份分支；reflog 是最后的救命稻草。
+安全原则：push 前可以用 reset，push 后只能用 revert；使用 `--hard` 前请三思；重要操作前先创建备份分支；reflog 是最后的救命稻草。
 
 ## 下一步
 

@@ -501,21 +501,11 @@ Now the commits are back!
 
 ### Principles for Safe Undoing
 
-#### Principle 1: Can use reset before push, can only use revert after push
+Can use reset before push, can only use revert after push. Not yet pushed: can use `git reset` to rewrite history. Already pushed: must use `git revert` to create new commits.
 
-- **Not yet pushed**: Can use `git reset` to rewrite history
-- **Already pushed**: Must use `git revert` to create new commits
+Think three times before using `--hard`. `git reset --hard` will permanently delete your changes. Before using, confirm: Do you really not need these changes anymore? Do you have a backup? Can you use `--soft` or `--mixed` instead?
 
-#### Principle 2: Think three times before using `--hard`
-
-`git reset --hard` will permanently delete your changes. Before using, confirm:
-- Do you really not need these changes anymore?
-- Do you have a backup?
-- Can you use `--soft` or `--mixed` instead?
-
-#### Principle 3: Create a branch before important operations
-
-If you're about to do a potentially risky operation, create a branch as backup first:
+Create a branch before important operations. If you're about to do a potentially risky operation, create a branch as backup first:
 
 ```bash
 $ git branch backup-before-reset
@@ -528,9 +518,7 @@ If something goes wrong, you can switch back to the backup branch:
 $ git checkout backup-before-reset
 ```
 
-#### Principle 4: Remember reflog is the last resort
-
-If you really messed up, remember to use `git reflog` to recover "lost" commits.
+Remember reflog is the last resort. If you really messed up, remember to use `git reflog` to recover "lost" commits.
 
 ## Common Problems and Solutions
 
@@ -572,7 +560,7 @@ Use `git restore` to specify the file:
 $ git restore <filename>
 ```
 
-Problem 5: What's the difference between `git restore` and `git reset`?
+**Problem 5: What's the difference between `git restore` and `git reset`?**
 
 `git restore` is used to undo working directory or staging area changes and doesn't affect commit history. `git reset` is used to move the HEAD pointer and changes commit history. Simple memory: not yet committed, use `git restore`; already committed, use `git reset` or `git revert`.
 
@@ -586,7 +574,7 @@ When comparing differences, `git diff` compares working directory and staging ar
 
 Undo operations have multiple methods: `git restore` undoes working directory or staging area changes; `git reset` has three modes—`--soft` only undoes commit but keeps staging area and working directory, `--mixed` undoes commit and staging area but keeps working directory, `--hard` discards all changes; for already pushed commits, use `git revert` to create a new commit to undo; if you accidentally delete commits, use `git reflog` to recover them.
 
-Remember the safety principles: can use reset before push, can only use revert after push; think three times before using `--hard`; create backup branch before important operations; reflog is the last resort.
+Safety principles: can use reset before push, can only use revert after push; think three times before using `--hard`; create backup branch before important operations; reflog is the last resort.
 
 ## Next steps
 
