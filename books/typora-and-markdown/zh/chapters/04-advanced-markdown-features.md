@@ -310,6 +310,21 @@ flowchart LR
 ```
 ````
 
+效果
+
+```mermaid
+flowchart LR
+    A[方形]
+    B(圆角方形)
+    C([体育场形])
+    D[[子程序形]]
+    E[(数据库)]
+    F((圆形))
+    G>旗帜形]
+    H{菱形}
+    I{{六边形}}
+```
+
 #### 连接线类型
 
 ````markdown
@@ -322,6 +337,17 @@ flowchart LR
     I -- 文字 --> J
 ```
 ````
+
+效果
+
+```mermaid
+flowchart LR
+    A --> B
+    C --- D
+    E -.-> F
+    G ==> H
+    I -- 文字 --> J
+```
 
 - `-->` 实线箭头
 - `---` 实线
@@ -360,6 +386,28 @@ flowchart TD
 ```
 ````
 
+效果
+
+```mermaid
+flowchart TD
+    Start[开始选择编辑器] --> Q1{主要用途?}
+    Q1 -->|写作| Q2{需要导出PDF?}
+    Q1 -->|编程| VSCode[推荐 VS Code]
+    Q1 -->|笔记| Obsidian[推荐 Obsidian]
+
+    Q2 -->|是| Typora[推荐 Typora]
+    Q2 -->|否| Q3{需要插件?}
+
+    Q3 -->|是| VSCode
+    Q3 -->|否| Typora
+
+    Typora --> End[开始使用]
+    VSCode --> End
+    Obsidian --> End
+```
+
+
+
 ### 时序图（Sequence Diagram）
 
 时序图用来展示对象之间的交互顺序，常用于描述系统架构、API 调用等。
@@ -380,6 +428,22 @@ sequenceDiagram
 ```
 ````
 
+效果
+
+```mermaid
+sequenceDiagram
+    participant 用户
+    participant 浏览器
+    participant 服务器
+
+    用户->>浏览器: 输入网址
+    浏览器->>服务器: 发送请求
+    服务器-->>浏览器: 返回页面
+    浏览器-->>用户: 显示页面
+```
+
+
+
 ### 甘特图（Gantt）
 
 甘特图用来展示项目时间线和任务安排。
@@ -399,6 +463,24 @@ gantt
     审校           :         des5, 2026-03-29, 2026-04-04
 ```
 ````
+
+效果
+
+```mermaid
+gantt
+    title 教材编写计划
+    dateFormat  YYYY-MM-DD
+    section 第一阶段
+    规划           :done,    des1, 2026-03-01, 2026-03-07
+    准备资料       :done,    des2, 2026-03-08, 2026-03-14
+    section 第二阶段
+    编写第一章     :active,  des3, 2026-03-15, 2026-03-21
+    编写第二章     :         des4, 2026-03-22, 2026-03-28
+    section 第三阶段
+    审校           :         des5, 2026-03-29, 2026-04-04
+```
+
+
 
 ### 类图（Class Diagram）
 
@@ -423,6 +505,28 @@ classDiagram
     文档 <|-- PDF文档
 ```
 ````
+
+效果
+
+```mermaid
+classDiagram
+    class 文档 {
+        +String 标题
+        +String 内容
+        +保存()
+        +导出()
+    }
+    class Markdown文档 {
+        +渲染()
+    }
+    class PDF文档 {
+        +打印()
+    }
+    文档 <|-- Markdown文档
+    文档 <|-- PDF文档
+```
+
+
 
 ### 在 Typora 中使用 Mermaid
 
@@ -487,12 +591,22 @@ Typora 原生支持 Mermaid：
 - 块级分数：$$\frac{a+b}{c+d}$$
 ```
 
+效果：
+- 行内分数：$\frac{1}{2}$
+- 块级分数：
+
+$$\frac{a+b}{c+d}$$
+
 #### 根号
 
 ```markdown
 - 平方根：$\sqrt{2}$
 - n次方根：$\sqrt[n]{x}$
 ```
+
+效果：
+- 平方根：$\sqrt{2}$
+- n次方根：$\sqrt[n]{x}$
 
 #### 求和、积分
 
@@ -502,11 +616,16 @@ Typora 原生支持 Mermaid：
 - 极限：$\lim_{x \to \infty} f(x)$
 ```
 
+效果：
+- 求和：$\sum_{i=1}^{n} x_i$
+- 积分：$\int_{a}^{b} f(x) dx$
+- 极限：$\lim_{x \to \infty} f(x)$
+
 ### 矩阵和方程组
 
 #### 矩阵
 
-```markdown
+```latex
 $$
 \begin{matrix}
 a & b \\
@@ -515,9 +634,16 @@ c & d
 $$
 ```
 
+效果
+$$
+\begin{matrix}
+a & b \\
+c & d
+\end{matrix}
+$$
 带括号的矩阵：
 
-```markdown
+```latex
 $$
 \begin{pmatrix}
 a & b \\
@@ -526,9 +652,18 @@ c & d
 $$
 ```
 
+效果
+
+$$
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+$$
+
 #### 方程组
 
-```markdown
+```latex
 $$
 \begin{cases}
 x + y = 5 \\
@@ -537,11 +672,20 @@ x + y = 5 \\
 $$
 ```
 
+效果
+
+$$
+\begin{cases}
+x + y = 5 \\
+2x - y = 1
+\end{cases}
+$$
+
 ### 化学公式（mhchem 扩展）
 
 Typora 支持 mhchem 扩展，可以写化学方程式：
 
-```markdown
+```latex
 $$\ce{H2O}$$
 $$\ce{CO2 + H2O -> H2CO3}$$
 $$\ce{2H2 + O2 -> 2H2O}$$

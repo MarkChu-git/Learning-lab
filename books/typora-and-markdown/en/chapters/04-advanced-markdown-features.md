@@ -310,6 +310,21 @@ flowchart LR
 ```
 ````
 
+Result
+
+```mermaid
+flowchart LR
+    A[Rectangle]
+    B(Rounded rectangle)
+    C([Stadium])
+    D[[Subroutine]]
+    E[(Database)]
+    F((Circle))
+    G>Flag]
+    H{Diamond}
+    I{{Hexagon}}
+```
+
 #### Connection Line Types
 
 ````markdown
@@ -322,6 +337,17 @@ flowchart LR
     I -- Text --> J
 ```
 ````
+
+Result
+
+```mermaid
+flowchart LR
+    A --> B
+    C --- D
+    E -.-> F
+    G ==> H
+    I -- Text --> J
+```
 
 - `-->` Solid arrow
 - `---` Solid line
@@ -360,6 +386,27 @@ flowchart TD
 ```
 ````
 
+Result
+
+```mermaid
+flowchart TD
+    Start[Start choosing editor] --> Q1{Main purpose?}
+    Q1 -->|Writing| Q2{Need PDF export?}
+    Q1 -->|Coding| VSCode[Recommend VS Code]
+    Q1 -->|Notes| Obsidian[Recommend Obsidian]
+
+    Q2 -->|Yes| Typora[Recommend Typora]
+    Q2 -->|No| Q3{Need plugins?}
+
+    Q3 -->|Yes| VSCode
+    Q3 -->|No| Typora
+
+    Typora --> End[Start using]
+    VSCode --> End
+    Obsidian --> End
+```
+
+
 ### Sequence Diagram
 
 Sequence diagrams show interaction order between objects, commonly used to describe system architecture, API calls, etc.
@@ -380,6 +427,21 @@ sequenceDiagram
 ```
 ````
 
+Result
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+
+    User->>Browser: Enter URL
+    Browser->>Server: Send request
+    Server-->>Browser: Return page
+    Browser-->>User: Display page
+```
+
+
 ### Gantt Chart
 
 Gantt charts show project timelines and task arrangements.
@@ -399,6 +461,23 @@ gantt
     Review             :         des5, 2026-03-29, 2026-04-04
 ```
 ````
+
+Result
+
+```mermaid
+gantt
+    title Textbook Writing Plan
+    dateFormat  YYYY-MM-DD
+    section Phase 1
+    Planning           :done,    des1, 2026-03-01, 2026-03-07
+    Prepare materials  :done,    des2, 2026-03-08, 2026-03-14
+    section Phase 2
+    Write Chapter 1    :active,  des3, 2026-03-15, 2026-03-21
+    Write Chapter 2    :         des4, 2026-03-22, 2026-03-28
+    section Phase 3
+    Review             :         des5, 2026-03-29, 2026-04-04
+```
+
 
 ### Class Diagram
 
@@ -423,6 +502,27 @@ classDiagram
     Document <|-- PDFDocument
 ```
 ````
+
+Result
+
+```mermaid
+classDiagram
+    class Document {
+        +String title
+        +String content
+        +save()
+        +export()
+    }
+    class MarkdownDocument {
+        +render()
+    }
+    class PDFDocument {
+        +print()
+    }
+    Document <|-- MarkdownDocument
+    Document <|-- PDFDocument
+```
+
 
 ### Using Mermaid in Typora
 
@@ -487,12 +587,22 @@ Result:
 - Block fraction: $$\frac{a+b}{c+d}$$
 ```
 
+Result:
+- Inline fraction: $\frac{1}{2}$
+- Block fraction:
+
+$$\frac{a+b}{c+d}$$
+
 #### Roots
 
 ```markdown
 - Square root: $\sqrt{2}$
 - nth root: $\sqrt[n]{x}$
 ```
+
+Result:
+- Square root: $\sqrt{2}$
+- nth root: $\sqrt[n]{x}$
 
 #### Summation, Integration
 
@@ -501,6 +611,11 @@ Result:
 - Integration: $\int_{a}^{b} f(x) dx$
 - Limit: $\lim_{x \to \infty} f(x)$
 ```
+
+Result:
+- Summation: $\sum_{i=1}^{n} x_i$
+- Integration: $\int_{a}^{b} f(x) dx$
+- Limit: $\lim_{x \to \infty} f(x)$
 
 ### Matrices and Equation Systems
 
@@ -515,6 +630,15 @@ c & d
 $$
 ```
 
+Result
+
+$$
+\begin{matrix}
+a & b \\
+c & d
+\end{matrix}
+$$
+
 Matrices with brackets:
 
 ```markdown
@@ -526,6 +650,15 @@ c & d
 $$
 ```
 
+Result
+
+$$
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+$$
+
 #### Equation Systems
 
 ```markdown
@@ -536,6 +669,15 @@ x + y = 5 \\
 \end{cases}
 $$
 ```
+
+Result
+
+$$
+\begin{cases}
+x + y = 5 \\
+2x - y = 1
+\end{cases}
+$$
 
 ### Chemical Formulas (mhchem Extension)
 
