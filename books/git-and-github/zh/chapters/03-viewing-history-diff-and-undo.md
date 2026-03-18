@@ -265,7 +265,7 @@ $ git restore <文件名>
 $ git restore .
 ```
 
-**示例**：
+示例：
 
 ```bash
 # 1. 修改了 README.md
@@ -286,9 +286,9 @@ On branch main
 nothing to commit, working tree clean
 ```
 
-**警告**：`git restore` 会直接丢弃你的修改，无法恢复！使用前请确认。
+警告：`git restore` 会直接丢弃你的修改，无法恢复！使用前请确认。
 
-**旧命令**：在 Git 2.23 之前，使用 `git checkout -- <文件名>`，现在不推荐使用。
+旧命令：在 Git 2.23 之前，使用 `git checkout -- <文件名>`，现在不推荐使用。
 
 ### 场景2：撤销暂存区的修改（已经 add，但还没 commit）
 
@@ -298,7 +298,7 @@ nothing to commit, working tree clean
 $ git restore --staged <文件名>
 ```
 
-**示例**：
+示例：
 
 ```bash
 # 1. 修改并添加到暂存区
@@ -323,7 +323,7 @@ Changes not staged for commit:
 
 现在文件又回到了"已修改但未暂存"的状态。如果想连工作区的修改也撤销，再运行一次 `git restore README.md`。
 
-**旧命令**：在 Git 2.23 之前，使用 `git reset HEAD <文件名>`。
+旧命令：在 Git 2.23 之前，使用 `git reset HEAD <文件名>`。
 
 ### 场景3：撤销已经提交的修改（还没 push）
 
@@ -337,7 +337,7 @@ Changes not staged for commit:
 $ git reset --soft HEAD~1
 ```
 
-**示例**：
+示例：
 
 ```bash
 # 1. 查看提交历史
@@ -371,7 +371,7 @@ $ git reset HEAD~1
 $ git reset --mixed HEAD~1
 ```
 
-**示例**：
+示例：
 
 ```bash
 # 1. 撤销最近一次提交
@@ -394,9 +394,9 @@ Changes not staged for commit:
 $ git reset --hard HEAD~1
 ```
 
-**警告**：这个命令会永久删除你的修改，无法恢复！使用前请三思。
+警告：这个命令会永久删除你的修改，无法恢复！使用前请三思。
 
-**示例**：
+示例：
 
 ```bash
 # 1. 撤销最近一次提交并丢弃所有修改
@@ -414,22 +414,15 @@ nothing to commit, working tree clean
 
 | 模式 | 移动 HEAD | 重置暂存区 | 重置工作区 | 使用场景 |
 |------|-----------|------------|------------|----------|
-| `--soft` | ✅ | ❌ | ❌ | 重新编辑提交 |
-| `--mixed` | ✅ | ✅ | ❌ | 重新整理文件 |
-| `--hard` | ✅ | ✅ | ✅ | 完全放弃修改 |
+| `--soft` | 是 | 否 | 否 | 重新编辑提交 |
+| `--mixed` | 是 | 是 | 否 | 重新整理文件 |
+| `--hard` | 是 | 是 | 是 | 完全放弃修改 |
 
-**记忆技巧**：
-- `--soft`：最温柔，只动 HEAD
-- `--mixed`：中等，动 HEAD 和暂存区
-- `--hard`：最狠，全都动
+记忆方法：`--soft` 最温柔，只动 HEAD；`--mixed` 中等，动 HEAD 和暂存区；`--hard` 最狠，全都动。
 
 ### 场景4：撤销已经推送的修改（已经 push）
 
-**重要原则**：如果已经把提交推送到远程仓库，**不要使用 `git reset`**！
-
-为什么？因为 `git reset` 会改写历史。如果别人已经基于这个提交开始工作，改写历史会导致他们的工作出问题。
-
-**正确做法**：使用 `git revert`。
+如果已经把提交推送到远程仓库，不要使用 `git reset`。为什么？因为 `git reset` 会改写历史。如果别人已经基于这个提交开始工作，改写历史会导致他们的工作出问题。正确做法是使用 `git revert`。
 
 #### `git revert`：创建新提交来撤销
 
@@ -439,7 +432,7 @@ nothing to commit, working tree clean
 $ git revert <提交ID>
 ```
 
-**示例**：
+示例：
 
 ```bash
 # 1. 查看提交历史
@@ -476,7 +469,7 @@ def5678 docs: add chapter 2
 $ git reflog
 ```
 
-**示例**：
+示例：
 
 ```bash
 # 1. 不小心删除了提交
@@ -497,21 +490,17 @@ $ git reset --hard HEAD@{1}
 
 现在提交又回来了！
 
-**注意**：reflog 只保留最近几个月的记录（默认90天），所以不要指望它能找回很久以前的提交。
+reflog 只保留最近几个月的记录（默认90天），所以不要指望它能找回很久以前的提交。
 
 ### 安全撤销的原则
 
 #### 原则1：push 前可以用 reset，push 后只能用 revert
 
-- **还没 push**：可以用 `git reset` 改写历史
-- **已经 push**：必须用 `git revert` 创建新提交
+还没 push 时，可以用 `git reset` 改写历史。已经 push 后，必须用 `git revert` 创建新提交。
 
 #### 原则2：使用 `--hard` 前请三思
 
-`git reset --hard` 会永久删除你的修改。使用前请确认：
-- 你真的不需要这些修改了吗？
-- 有没有备份？
-- 能不能用 `--soft` 或 `--mixed` 代替？
+`git reset --hard` 会永久删除修改。使用前请确认：真的不需要这些修改了吗？有没有备份？能不能用 `--soft` 或 `--mixed` 代替？
 
 #### 原则3：重要操作前先创建分支
 
@@ -534,7 +523,7 @@ $ git checkout backup-before-reset
 
 ## 常见问题与解决
 
-**问题1：我不小心用 `git reset --hard` 删除了重要提交，怎么办？**
+问题1：我不小心用 `git reset --hard` 删除了重要提交，怎么办？
 
 用 `git reflog` 找回：
 
@@ -543,7 +532,7 @@ $ git reflog
 $ git reset --hard <提交ID>
 ```
 
-**问题2：我想撤销多次提交，应该怎么做？**
+问题2：我想撤销多次提交，应该怎么做？
 
 用 `git reset HEAD~N`，N 是你想撤销的提交数量：
 
@@ -552,7 +541,7 @@ $ git reset --hard <提交ID>
 $ git reset HEAD~3
 ```
 
-**问题3：`git revert` 时出现冲突，怎么办？**
+问题3：`git revert` 时出现冲突，怎么办？
 
 手动解决冲突，然后继续 revert：
 
@@ -564,7 +553,7 @@ $ git add <文件名>
 $ git revert --continue
 ```
 
-**问题4：我想撤销某个文件的修改，但保留其他文件，怎么做？**
+问题4：我想撤销某个文件的修改，但保留其他文件，怎么做？
 
 用 `git restore` 指定文件：
 
@@ -572,7 +561,7 @@ $ git revert --continue
 $ git restore <文件名>
 ```
 
-**问题5：`git restore` 和 `git reset` 有什么区别？**
+问题5：`git restore` 和 `git reset` 有什么区别？
 
 - `git restore`：用于撤销工作区或暂存区的修改，不影响提交历史
 - `git reset`：用于移动 HEAD 指针，改变提交历史
@@ -583,38 +572,18 @@ $ git restore <文件名>
 
 ## 本章小结
 
-这一章我们学习了 Git 的历史查看、差异比较和撤销能力：
+这一章学习了 Git 的历史查看、差异比较和撤销能力。
 
-**查看历史**：
-- `git log` 查看提交历史
-- `--oneline` 简化输出
-- `--graph` 可视化分支
-- `-p` 查看详细改动
-- `--grep` 搜索提交信息
-- `--author` 按作者过滤
-- `git show` 查看单个提交
+查看历史方面，`git log` 是核心命令，配合 `--oneline` 可以简化输出，`--graph` 能可视化分支，`-p` 显示详细改动，`--grep` 和 `--author` 用于搜索和过滤。`git show` 则用来查看单个提交的完整信息。
 
-**比较差异**：
-- `git diff` 工作区 vs 暂存区
-- `git diff --staged` 暂存区 vs 最新提交
-- `git diff <commit1> <commit2>` 比较两个提交
+比较差异时，`git diff` 比较工作区和暂存区，`git diff --staged` 比较暂存区和最新提交，也可以用 `git diff <commit1> <commit2>` 比较任意两个提交。
 
-**撤销操作**：
-- `git restore` 撤销工作区或暂存区的修改
-- `git reset --soft` 撤销提交，保留暂存区和工作区
-- `git reset --mixed` 撤销提交，保留工作区
-- `git reset --hard` 撤销提交，丢弃所有修改
-- `git revert` 创建新提交来撤销（用于已 push 的提交）
-- `git reflog` 找回"丢失"的提交
+撤销操作有多种方式：`git restore` 用于撤销工作区或暂存区的修改；`git reset` 有三种模式，`--soft` 只撤销提交但保留暂存区和工作区，`--mixed` 撤销提交和暂存区但保留工作区，`--hard` 则丢弃所有修改；对于已经 push 的提交，要用 `git revert` 创建新提交来撤销；如果不小心删除了提交，可以用 `git reflog` 找回。
 
-**安全原则**：
-- push 前可以用 reset，push 后只能用 revert
-- 使用 `--hard` 前请三思
-- 重要操作前先创建备份分支
-- 记住 reflog 是最后的救命稻草
+安全原则要记住：push 前可以用 reset，push 后只能用 revert；使用 `--hard` 前请三思；重要操作前先创建备份分支；reflog 是最后的救命稻草。
 
 ## 下一步
 
 现在已经掌握了 Git 的基本操作：初始化、提交、查看历史、比较差异、撤销修改。但到目前为止，我们都是在一条直线上工作——每次提交都是在上一次提交的基础上继续。
 
-在下一章，我们会学习 Git 最强大的功能之一：**分支**。分支让你可以同时进行多个平行开发：在一个分支上开发新功能，在另一个分支上修复 bug，在第三个分支上做实验。而且这些分支之间互不干扰，最后还能合并到一起。
+在下一章，我们会学习 Git 最强大的功能之一：分支。分支让你可以同时进行多个平行开发：在一个分支上开发新功能，在另一个分支上修复 bug，在第三个分支上做实验。而且这些分支之间互不干扰，最后还能合并到一起。

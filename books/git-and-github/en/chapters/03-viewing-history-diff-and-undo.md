@@ -414,9 +414,9 @@ All changes are gone.
 
 | Mode | Move HEAD | Reset Staging | Reset Working | Use Case |
 |------|-----------|---------------|---------------|----------|
-| `--soft` | ✅ | ❌ | ❌ | Re-edit commit |
-| `--mixed` | ✅ | ✅ | ❌ | Reorganize files |
-| `--hard` | ✅ | ✅ | ✅ | Completely abandon changes |
+| `--soft` | Yes | No | No | Re-edit commit |
+| `--mixed` | Yes | Yes | No | Reorganize files |
+| `--hard` | Yes | Yes | Yes | Completely abandon changes |
 
 **Memory tip**:
 - `--soft`: Gentlest, only moves HEAD
@@ -572,48 +572,23 @@ Use `git restore` to specify the file:
 $ git restore <filename>
 ```
 
-**Problem 5: What's the difference between `git restore` and `git reset`?**
+Problem 5: What's the difference between `git restore` and `git reset`?
 
-- `git restore`: Used to undo working directory or staging area changes, doesn't affect commit history
-- `git reset`: Used to move HEAD pointer, changes commit history
+`git restore` is used to undo working directory or staging area changes and doesn't affect commit history. `git reset` is used to move the HEAD pointer and changes commit history. Simple memory: not yet committed, use `git restore`; already committed, use `git reset` or `git revert`.
 
-Simple memory:
-- Not yet committed → use `git restore`
-- Already committed → use `git reset` or `git revert`
+## Chapter summary
 
-## Chapter Summary
+In this chapter we learned Git's history viewing, difference comparison, and undo capabilities.
 
-In this chapter we learned Git's history viewing, difference comparison, and undo capabilities:
+For viewing history, `git log` is the core command. Combined with `--oneline` it simplifies output, `--graph` visualizes branches, `-p` shows detailed changes, and `--grep` and `--author` are used for searching and filtering. `git show` views complete information for a single commit.
 
-**Viewing History**:
-- `git log` view commit history
-- `--oneline` simplified output
-- `--graph` visualize branches
-- `-p` view detailed changes
-- `--grep` search commit messages
-- `--author` filter by author
-- `git show` view single commit
+When comparing differences, `git diff` compares working directory and staging area, `git diff --staged` compares staging area and latest commit, and you can also use `git diff <commit1> <commit2>` to compare any two commits.
 
-**Comparing Differences**:
-- `git diff` working directory vs staging area
-- `git diff --staged` staging area vs latest commit
-- `git diff <commit1> <commit2>` compare two commits
+Undo operations have multiple methods: `git restore` undoes working directory or staging area changes; `git reset` has three modes—`--soft` only undoes commit but keeps staging area and working directory, `--mixed` undoes commit and staging area but keeps working directory, `--hard` discards all changes; for already pushed commits, use `git revert` to create a new commit to undo; if you accidentally delete commits, use `git reflog` to recover them.
 
-**Undo Operations**:
-- `git restore` undo working directory or staging area changes
-- `git reset --soft` undo commit, keep staging area and working directory
-- `git reset --mixed` undo commit, keep working directory
-- `git reset --hard` undo commit, discard all changes
-- `git revert` create new commit to undo (for already pushed commits)
-- `git reflog` recover "lost" commits
+Remember the safety principles: can use reset before push, can only use revert after push; think three times before using `--hard`; create backup branch before important operations; reflog is the last resort.
 
-**Safety Principles**:
-- Can use reset before push, can only use revert after push
-- Think three times before using `--hard`
-- Create backup branch before important operations
-- Remember reflog is the last resort
-
-## Next Steps
+## Next steps
 
 Now you've mastered Git's basic operations: initialize, commit, view history, compare differences, undo changes. But so far, we've been working on a single line—each commit continues based on the previous commit.
 
