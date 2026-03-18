@@ -1,6 +1,6 @@
 # Chapter 2: Build Documents That Survive Long-Term Maintenance
 
-> Language / 语言：[中文](02-structure-images-and-paths.md) | **English**
+> Language / 语言：[中文](../../zh/chapters/02-structure-images-and-paths.md) | **English**
 
 Chapter 1 established the writing mindset.
 

@@ -1,6 +1,6 @@
 # Chapter 1: Use Typora and Markdown as a Real Writing Method
 
-> Language / 语言：[中文](01-typora-and-markdown.md) | **English**
+> Language / 语言：[中文](../../zh/chapters/01-typora-and-markdown.md) | **English**
 
 This chapter is the foundation of the whole volume.
 

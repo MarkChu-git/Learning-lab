@@ -1,6 +1,6 @@
 # Chapter 3: Markdown Basics, LaTeX Formula Syntax, and Typora Settings
 
-> Language / 语言：[中文](03-markdown-latex-and-typora-settings.md) | **English**
+> Language / 语言：[中文](../../zh/chapters/03-markdown-latex-and-typora-settings.md) | **English**
 
 This chapter connects three things beginners often learn separately:
 

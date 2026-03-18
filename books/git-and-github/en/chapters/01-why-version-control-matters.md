@@ -1,6 +1,6 @@
 # Chapter 1: What Version Control Is Actually Solving
 
-> Language / 语言：[中文](01-why-version-control-matters.md) | **English**
+> Language / 语言：[中文](../../zh/chapters/01-why-version-control-matters.md) | **English**
 
 Many beginners think they “learned Git” after memorizing commands like `add`, `commit`, and `push`.
 
